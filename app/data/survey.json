@@ -1,0 +1,168 @@
+{
+  "night": {
+    "title": "A Sacred Sleep",
+    "description": "A ritual of rest",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Do you consciously step away from your phone before going to bed?",
+        "input_type": "single_choice",
+        "options": [{ "label": "Yes" }, { "label": "No" }, { "label": "Sometimes" }]
+      },
+      {
+        "id": "q2",
+        "question": "How soon before sleep do you usually put your phone to bed?",
+        "input_type": "single_choice",
+        "options": [
+          { "label": "More than an hour before" },
+          { "label": "30–60 minutes before" },
+          { "label": "10–30 minutes before" },
+          { "label": "Right before sleep" }
+        ]
+      },
+      {
+        "id": "q3",
+        "question": "Where does your phone sleep at night?",
+        "input_type": "single_choice",
+        "options": [
+          { "label": "I have a special designated place away from my bed" },
+          { "label": "In another room" },
+          { "label": "On a bedside table" },
+          { "label": "In bed with me" },
+          { "label": "Somewhere else" }
+        ]
+      },
+      {
+        "id": "q4",
+        "question": "Do you follow a ritual away from screens such as reading, meditation, that helps you drift off?",
+        "input_type": "single_choice",
+        "options": [
+          { "label": "Yes, every night" },
+          { "label": "Sometimes" },
+          { "label": "Rarely" },
+          { "label": "Never" },
+          { "label": "I’m not sure" }
+        ]
+      }
+    ]
+  },
+  "day": {
+    "title": "A Present Day",
+    "description": "A ritual of return",
+    "questions": [
+      {
+        "id": "q5",
+        "question": "What’s the first thing you touch in the morning?",
+        "input_type": "single_choice",
+        "options": [
+          { "label": "A loved one" },
+          { "label": "Myself" },
+          { "label": "My phone" },
+          { "label": "Something else" }
+        ]
+      },
+      {
+        "id": "q6",
+        "question": "How soon after waking do you let the outside world in through your phone?",
+        "input_type": "single_choice",
+        "options": [
+          { "label": "Almost straight away" },
+          { "label": "After 10 minutes" },
+          { "label": "After 30 minutes" },
+          { "label": "After 1 hour or more" }
+        ]
+      },
+      {
+        "id": "q7",
+        "question": "Do you start the day with a ritual—however small—before reaching for your phone?",
+        "input_type": "single_choice",
+        "options": [
+          { "label": "Yes, it anchors me" },
+          { "label": "Sometimes—I try" },
+          { "label": "Rarely—habit takes over" },
+          { "label": "No—my phone is the start" }
+        ]
+      },
+      {
+        "id": "q8",
+        "question": "Do you feel what you take in first thing through screens can affect your mood?",
+        "input_type": "single_choice",
+        "options": [{ "label": "Yes" }, { "label": "No" }, { "label": "Sometimes" }]
+      }
+    ]
+  },
+  "ritual": {
+    "title": "Time Is In Our Hands",
+    "description": "",
+    "questions": [
+      {
+        "id": "q9",
+        "question": "In your closest relationships, do you feel that phones impact the time you spend together?",
+        "input_type": "single_choice",
+        "options": [
+          { "label": "Not at all" },
+          { "label": "Not often" },
+          { "label": "More than I realise" },
+          { "label": "All the time" },
+          { "label": "N/A" }
+        ]
+      },
+      {
+        "id": "q10",
+        "question": "In a world of relentless distraction, do any of the following resonate?",
+        "input_type": "multi_choice",
+        "options": [
+          { "label": "I don’t feel deeply rested" },
+          { "label": "My body feels a subtle tension that lingers" },
+          { "label": "I’m rarely fully present" },
+          { "label": "My brain feels like it is slowly shrinking" },
+          { "label": "I watch things that aren’t relevant or helpful to my life" },
+          { "label": "I sense that others are distracted in my company" },
+          { "label": "It stops me from doing things I’d like to be doing" },
+          { "label": "Time just disappears" },
+          { "label": "No, my phone only has a positive impact in my life" },
+          { "label": "Other (please share)" }
+        ]
+      },
+      {
+        "id": "q11",
+        "question": "If you chose to create more space between you and your phone—even briefly— how might your life be better? (Select all that apply)",
+        "input_type": "multi_choice",
+        "options": [
+          { "label": "My sleep would be less disturbed" },
+          { "label": "I would have more energy in my body" },
+          { "label": "I might feel more focus and clarity" },
+          { "label": "A sense of pride in myself" },
+          { "label": "Less urgency or pressure to respond or act" },
+          { "label": "I’d pay attention to how I actually feel" },
+          { "label": "Attentive listening to the people that count" },
+          { "label": "It would inspire me to be more spontaneous" },
+          { "label": "By looking up, I’d notice more" },
+          { "label": "Other (please share)" }
+        ]
+      },
+      {
+        "id": "q12",
+        "question": "If you had ten more minutes away from your phone each day, what might you give that time to?",
+        "input_type": "text"
+      },
+      {
+        "id": "q13",
+        "question": "Can you tell us your age? (optional)",
+        "input_type": "single_choice",
+        "options": [
+          { "label": "18–29" },
+          { "label": "30–44" },
+          { "label": "45–59" },
+          { "label": "60+" }
+        ]
+      },
+      {
+        "id": "q14",
+        "question": "Can you tell us your gender? (optional)",
+        "input_type": "single_choice",
+        "options": [{ "label": "Male" }, { "label": "Female" }, { "label": "Non binary" }]
+      }
+    ]
+  }
+}

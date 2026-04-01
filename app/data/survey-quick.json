@@ -1,0 +1,49 @@
+{
+  "night": {
+    "title": "A Sacred Sleep",
+    "description": "A ritual of rest",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "Do you consciously step away from your phone before going to bed?",
+        "input_type": "single_choice",
+        "options": [{ "label": "Yes" }, { "label": "No" }, { "label": "Sometimes" }]
+      }
+    ]
+  },
+  "day": {
+    "title": "A Present Day",
+    "description": "A ritual of return",
+    "questions": [
+      {
+        "id": "q5",
+        "question": "What’s the first thing you touch in the morning?",
+        "input_type": "single_choice",
+        "options": [
+          { "label": "A loved one" },
+          { "label": "Myself" },
+          { "label": "My phone" },
+          { "label": "Something else" }
+        ]
+      }
+    ]
+  },
+  "ritual": {
+    "title": "Time Is In Our Hands",
+    "description": "",
+    "questions": [
+      {
+        "id": "q9",
+        "question": "In your closest relationships, do you feel that phones impact the time you spend together?",
+        "input_type": "single_choice",
+        "options": [
+          { "label": "Not at all" },
+          { "label": "Not often" },
+          { "label": "More than I realise" },
+          { "label": "All the time" },
+          { "label": "N/A" }
+        ]
+      }
+    ]
+  }
+}
