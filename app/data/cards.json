@@ -1,0 +1,582 @@
+{
+  "day": [
+    {
+      "id": "day-awareness",
+      "group": "Day",
+      "word": "Awareness",
+      "symbol": "/images/card-symbols/awareness.png",
+      "description": "You are part of what’s happening—within you, around you, through you.\nYet when presence fades, so much goes unseen.\nWhat might reveal itself when you are fully here?",
+      "ritual": "Notice something so familiar it fades into the background.\nLook, touch, feel, listen, speak to it as if for the first time."
+    },
+    {
+      "id": "day-boredom",
+      "group": "Day",
+      "word": "Boredom",
+      "symbol": "/images/card-symbols/boredom.png",
+      "description": "Overstimulation turns boredom into a luxurious rarity.\nIt is hard to find yourself if you are always looking for distraction.\nOften moments of nothing create the seeds of something.",
+      "ritual": "Set aside time today to simply do nothing, even if only a minute.\nPerhaps it leads somewhere unexpected?"
+    },
+    {
+      "id": "day-change",
+      "group": "Day",
+      "word": "Change",
+      "symbol": "/images/card-symbols/change.png",
+      "description": "The seasons do not ask our permission.\nThey turn and we must turn with them.\nKnowing that even in the depths of winter, there is untold beauty.",
+      "ritual": "Today, find one thing to do differently—no matter how small.\nIn that shift, open space for what may be waiting to arrive."
+    },
+    {
+      "id": "day-chaos",
+      "group": "Day",
+      "word": "Chaos",
+      "symbol": "/images/card-symbols/chaos.png",
+      "description": "Chaos isn’t the end; it shatters what was never meant to last.\nWhat if the undoing is exactly what’s needed?\nWhat breaks open carries the seeds of what is yet to grow.",
+      "ritual": "Take a moment of calm today to just be. \nObserve with curiosity rather than the urge to fix."
+    },
+    {
+      "id": "day-choice",
+      "group": "Day",
+      "word": "Choice",
+      "symbol": "/images/card-symbols/choice.png",
+      "description": "This precious day will never come again.\nYou may not always control what life brings,\nbut you can choose how to stand before it.",
+      "ritual": "Stand still for a moment.\nBefore doing the next thing, notice the space between one breath and the next—\nthe quiet place where choice begins."
+    },
+    {
+      "id": "day-courage",
+      "group": "Day",
+      "word": "Courage",
+      "symbol": "/images/card-symbols/courage.png",
+      "description": "Courage lives where truth and the heart meet.\nIt isn’t always bold; sometimes it’s staying when you long to run.\nOther times it’s stepping forward, even when your hands shake.",
+      "ritual": "Place your hand on your heart. Close your eyes.\nSpeak one truth or name one fear.\nLet it rise all the way out to be heard, if only by you."
+    },
+    {
+      "id": "day-create",
+      "group": "Day",
+      "word": "Create",
+      "symbol": "/images/card-symbols/create.png",
+      "description": "Every day brings the possibility of new life. When did you last feel inspired to create rather than consume? Wake up the force inside you that longs to be expressed.",
+      "ritual": "Free up your hands. Make something uniquely yours today.\nEven the smallest act is a song of freedom."
+    },
+    {
+      "id": "day-dance",
+      "group": "Day",
+      "word": "Dance",
+      "symbol": "/images/card-symbols/dance.png",
+      "description": "Dance is poetry in movement. \nIt is somewhere to be found whilst getting lost.\nFor the body knows what the mind has forgotten.",
+      "ritual": "Move without plan or purpose; even in silence.\nFind joy alone or invite someone in with you."
+    },
+    {
+      "id": "day-deception",
+      "group": "Day",
+      "word": "Deception",
+      "symbol": "/images/card-symbols/deception.png",
+      "description": "The most powerful lies are the ones we want to believe. \nYet the heart beats only for what is real;\nwaiting to remind us we know better.",
+      "ritual": "Mask your face with your hands. \nBreathe.\nAsk yourself what you’re not seeing."
+    },
+    {
+      "id": "day-desire",
+      "group": "Day",
+      "word": "Desire",
+      "symbol": "/images/card-symbols/desire.png",
+      "description": "Desire is the spark that gives movement to life. Unbridled, it can consume all it touches.\nIgnited with love, it becomes a flame that endures.",
+      "ritual": "Speak a desire aloud without disguise.\nFeel whether it lightens you, or weighs you down."
+    },
+    {
+      "id": "day-discipline",
+      "group": "Day",
+      "word": "Discipline",
+      "symbol": "/images/card-symbols/discipline.png",
+      "description": "We become what we repeat.\nDiscipline is a steady companion.\nThrough it, small steps transform into lasting change.",
+      "ritual": "Let this card invite a beginning.\nChoose one thing to start or return to.\nBegin today with no judgement, only consistency."
+    },
+    {
+      "id": "day-focus",
+      "group": "Day",
+      "word": "Focus",
+      "symbol": "/images/card-symbols/focus.png",
+      "description": "Focus is the union of attention and intention. \nWhere do your priorities lie, and how are they shaping you?\nWhen body and mind come together, life steadies.",
+      "ritual": "Bring your attention to a single point in front of you.\nSee how long you can gaze before your mind wanders."
+    },
+    {
+      "id": "day-friendship",
+      "group": "Day",
+      "word": "Friendship",
+      "symbol": "/images/card-symbols/friendship.png",
+      "description": "Friendship asks us to look up and reach out.\nWho lingers at the edge of your attention?\nTo be a friend is to loosen the grip of self—and to offer presence instead.",
+      "ritual": "Think of the one who’s stayed quietly in your mind.\nReach out.\nNot to fix or explain—just to say: I see you."
+    },
+    {
+      "id": "day-hope",
+      "group": "Day",
+      "word": "Hope",
+      "symbol": "/images/card-symbols/hope.png",
+      "description": "Hope isn’t a promise; it is often simply the refusal to turn away.\nIt lives not in certainty, but in the willingness to continue—\nregardless of what life throws.",
+      "ritual": "Name one small thing you still believe in.\nLet that land all over your body."
+    },
+    {
+      "id": "day-integrity",
+      "group": "Day",
+      "word": "Integrity",
+      "symbol": "/images/card-symbols/integrity.png",
+      "description": "Integrity doesn’t shout; it stands with a rare quiet presence. \nIs part of you left abandoned in order to please the crowd?\nHolding on to your integrity is true power.",
+      "ritual": "Choose one thing you have been avoiding out of convenience or approval.\nDo it for no-one but yourself."
+    },
+    {
+      "id": "day-joy",
+      "group": "Day",
+      "word": "Joy",
+      "symbol": "/images/card-symbols/joy.png",
+      "description": "Joy is a resistance fighter.\nIt arrives wild and unannounced with nothing to prove.\nTo hand you back for free what you didn’t know was missing.",
+      "ritual": "Find one thing that brings you joy.\nCarry it, feel it with you all day—joy doesn’t ask why."
+    },
+    {
+      "id": "day-love",
+      "group": "Day",
+      "word": "Love",
+      "symbol": "/images/card-symbols/love.png",
+      "description": "Make love your greatest distraction.\nLet it steal every minute,\nuntil all that’s left is what always was.",
+      "ritual": "Love is the banner you carry into the world.\nWhat does yours say?\nWrite it down to raise it up."
+    },
+    {
+      "id": "day-miracle",
+      "group": "Day",
+      "word": "Miracle",
+      "symbol": "/images/card-symbols/miracle.png",
+      "description": "The miraculous does not just dwell in distant realms or fairy tales.\nWe find it when we attend to the ordinary with new eyes.\nThe quiet astonishment of simply being here.",
+      "ritual": "Pour a glass of water.\nWatch the way it catches the light.\nDrink slowly, as if it were the first and last water on earth."
+    },
+    {
+      "id": "day-move",
+      "group": "Day",
+      "word": "Move",
+      "symbol": "/images/card-symbols/move.png",
+      "description": "Movement is what humans are. Often we stay longer than we mean to. Sometimes it’s as simple as putting one foot in front of the other.",
+      "ritual": "Notice the steps you take this morning — the inner ones as much as the outer.\nMake them as vital as possible."
+    },
+    {
+      "id": "day-nature",
+      "group": "Day",
+      "word": "Nature",
+      "symbol": "/images/card-symbols/nature.png",
+      "description": "You are not in nature—you are nature.\nEven through concrete, life will always find its way.\nLet it remind you of your own beauty and resilience.",
+      "ritual": "Seek out the joy of nature—whether in a wide horizon or a single weed.\nPause with it, noticing how life endures often against the odds."
+    },
+    {
+      "id": "day-notice",
+      "group": "Day",
+      "word": "Notice",
+      "symbol": "/images/card-symbols/notice.png",
+      "description": "We are exposed to much—but notice little.\nWhen did you last free up your senses to something new?\nTo notice is waking to the wonder already here.",
+      "ritual": "Today, walk a path you know well.\nStop along the way to touch, smell or listen to something you usually pass by."
+    },
+    {
+      "id": "day-passion",
+      "group": "Day",
+      "word": "Passion",
+      "symbol": "/images/card-symbols/passion.png",
+      "description": "The heart of the fire lies in the embers. \nWhat wild flame is still smouldering inside?\nLet it speak.",
+      "ritual": "This morning, wake the senses. \nSing, eat, touch something that enlivens you. \nDo one thing to call your passion to the surface."
+    },
+    {
+      "id": "day-perspective",
+      "group": "Day",
+      "word": "Perspective",
+      "symbol": "/images/card-symbols/perspective.png",
+      "description": "Step back. Then step back again.\nMuch of what we absorb may feel validating—but does it reveal the truth?\nPerspective returns when the noise falls away.",
+      "ritual": "Shift your body—lean, bend, go upside down or simply sit elsewhere.\nWhen the angle changes; the world looks new."
+    },
+    {
+      "id": "day-play",
+      "group": "Day",
+      "word": "Play",
+      "symbol": "/images/card-symbols/play.png",
+      "description": "When was the last time you did something playful?\nPlay is something natural to us all, yet so often we forget.\nIt is not only childhood’s gift, but life’s necessity.",
+      "ritual": "Make space for something playful today.\nForget everything except the joy of the game."
+    },
+    {
+      "id": "day-purpose",
+      "group": "Day",
+      "word": "Purpose",
+      "symbol": "/images/card-symbols/purpose.png",
+      "description": "Purpose is the why in life rather than the how.\nThe world often confuses purpose with achievement.\nReturn to what speaks to your heart.",
+      "ritual": "Offer a small act of service to yourself or to another today.\nThe gift is the giving itself."
+    },
+    {
+      "id": "day-question",
+      "group": "Day",
+      "word": "Question",
+      "symbol": "/images/card-symbols/question.png",
+      "description": "In a world that feeds on certainty, to question is an act of rebellion.\nHow do we ever truly know?\nWisdom is often staying curious rather than rushing for the answer.",
+      "ritual": "When a feeling, thought or story takes hold today, pause.\nBefore concluding, ask what lies beneath this?"
+    },
+    {
+      "id": "day-rebel",
+      "group": "Day",
+      "word": "Rebel",
+      "symbol": "/images/card-symbols/rebel.png",
+      "description": "The real rebellion is an inward one.\nNot the flare of fists or triumph, but the resolve to walk by the light no-one else can give you.",
+      "ritual": "Delete one thing that steals your time.\nFeel the small revolution of reclaiming space."
+    },
+    {
+      "id": "day-resistance",
+      "group": "Day",
+      "word": "Resistance",
+      "symbol": "/images/card-symbols/resistance.png",
+      "description": "Sometimes even the smallest ‘no’ can shift everything. Which part of you refuses to bow? In resistance, true strength is found.",
+      "ritual": "Press your hands either onto the floor or the wall to form a plank.\nPush into the effort. \nStep back and sense the strength that remains."
+    },
+    {
+      "id": "day-risk",
+      "group": "Day",
+      "word": "Risk",
+      "symbol": "/images/card-symbols/risk.png",
+      "description": "Risk is the moment you stop watching—and begin.\nHave you been mistaking observation for experience?\nTo risk is to choose presence over comfort and safety.",
+      "ritual": "Choose one thing that quickens your pulse.\nMaybe for the thrill of it, but most importantly to feel something.\nLet it remind you that you’re here."
+    },
+    {
+      "id": "day-simplicity",
+      "group": "Day",
+      "word": "Simplicity",
+      "symbol": "/images/card-symbols/simplicity.png",
+      "description": "Most of what we carry, we do not need.",
+      "ritual": "Today, leave home with as little as possible. See what happens."
+    },
+    {
+      "id": "day-strength",
+      "group": "Day",
+      "word": "Strength",
+      "symbol": "/images/card-symbols/strength.png",
+      "description": "Stand your ground.\nKnowing that strength requires the courage to be vulnerable,\neven when your world hardens.",
+      "ritual": "Stand with bare feet on the ground.\nLet your weight drop down as your spine rises.\nFeel the power your breath brings to your body."
+    },
+    {
+      "id": "day-surprise",
+      "group": "Day",
+      "word": "Surprise",
+      "symbol": "/images/card-symbols/surprise.png",
+      "description": "Surprise lives just beyond the edge of what we control.\nWhether joyful or unwanted, \nmake space for the glorious unknown.",
+      "ritual": "Surprise someone today—or surprise yourself.\nDo one thing you didn’t see coming."
+    },
+    {
+      "id": "day-transform",
+      "group": "Day",
+      "word": "Transform",
+      "symbol": "/images/card-symbols/transform.png",
+      "description": "There comes a time when things begin to unfurl.\t\nWhat you are ready to outgrow may feel uncertain,\nbut can also be magnificent.",
+      "ritual": "Jump, shake, move, stretch—imagine shedding a layer of skin.\nFeel the body recognise a new beginning."
+    },
+    {
+      "id": "day-understand",
+      "group": "Day",
+      "word": "Understand",
+      "symbol": "/images/card-symbols/understand.png",
+      "description": "In a world drowning in information, true understanding is a lost art.\nAre you quick to interrupt, explain or defend?\nWisdom lives in the spaces between the words.",
+      "ritual": "Notice whether what you next see has been created to provoke or inform.\nEither way, hold your convictions lightly."
+    },
+    {
+      "id": "day-voice",
+      "group": "Day",
+      "word": "Voice",
+      "symbol": "/images/card-symbols/voice.png",
+      "description": "One voice can change everything\nThe art is knowing which words to leave unsaid\nand which to set free.",
+      "ritual": "Find the strength to sing out today.\nMaybe alone, or find your audience.\nFeel every word."
+    },
+    {
+      "id": "day-nidra",
+      "group": "Day",
+      "word": "Nidra",
+      "symbol": "/images/card-symbols/nidra.png",
+      "description": "When did you last step out without a phone in your hand?\nThis card asks for something different. \nKeep it close until the time is right.",
+      "ritual": "Seek out a day, hour or sacred moment to rediscover your waking world, screen free.\nOn returning, place the card back among its companions,\nready to appear again when your soul needs it most."
+    }
+  ],
+  "night": [
+    {
+      "id": "night-balance",
+      "group": "Night",
+      "word": "Balance",
+      "symbol": "/images/card-symbols/balance.png",
+      "description": "Even wild horses know when to stop and rest.\nWhat have you kept spinning long past the point of purpose?\nTo return to balance is to step away from the spell of urgency and move with your own rhythm.",
+      "ritual": "Sitting or standing, feel the ground beneath both feet.\nGently transfer the weight left and right. \nFeel a sense of balance steady the body."
+    },
+    {
+      "id": "night-boundary",
+      "group": "Night",
+      "word": "Boundary",
+      "symbol": "/images/card-symbols/boundary.png",
+      "description": "Boundary is knowing what to leave outside.\nGuard the tender places within,\nremembering to respect the same in others.",
+      "ritual": "Tonight, draw an invisible circle around your bed or the space you’re in.\nWhat really belongs with you there or what could be invited in?"
+    },
+    {
+      "id": "night-breath",
+      "group": "Night",
+      "word": "Breath",
+      "symbol": "/images/card-symbols/breath.png",
+      "description": "Even when you vanish from yourself,\nbreath is your constant companion.\nIt tells you everything you need to know, should you remain still enough to listen.",
+      "ritual": "Lie down. Relax everything.\nInhale slowly and softly from the tip of your nose to your belly, then out again.\nLet your breath connect every part."
+    },
+    {
+      "id": "night-discern",
+      "group": "Night",
+      "word": "Discern",
+      "symbol": "/images/card-symbols/discern.png",
+      "description": "Many things are placed before us, yet few serve the soul.\nIt is not always clear what nourishes and what drains.\nDiscernment is the art of knowing the difference.",
+      "ritual": "Lightly hold your breath at the top of your inhale and the base of your exhale.\nTake time to observe the pause in between."
+    },
+    {
+      "id": "night-dream",
+      "group": "Night",
+      "word": "Dream",
+      "symbol": "/images/card-symbols/dream.png",
+      "description": "Each image before sleep leaves its trace.\nDo your dreams speak from within,\nor echo what you’ve just seen?",
+      "ritual": "With each breath, release what is no longer needed—until only quiet remains for dreaming."
+    },
+    {
+      "id": "night-escape",
+      "group": "Night",
+      "word": "Escape",
+      "symbol": "/images/card-symbols/escape.png",
+      "description": "Do you long for wilder shores or quiet refuge from the relentlessness of the everyday?\nEither way, the truest escape will always bring you home to yourself.",
+      "ritual": "Tonight, go somewhere only you know—a sanctuary, even if only in your imagination.\nWho is allowed in? \nPerhaps only you."
+    },
+    {
+      "id": "night-generosity",
+      "group": "Night",
+      "word": "Generosity",
+      "symbol": "/images/card-symbols/generosity.png",
+      "description": "Generosity begins with how you meet yourself.\nWhat you offer the world must first pass through your own heart.\nIn this way, nothing is taken, only transformed.",
+      "ritual": "Tonight, wrap your arms around someone who needs you—\nor the patient part of you that has been waiting."
+    },
+    {
+      "id": "night-gratitude",
+      "group": "Night",
+      "word": "Gratitude",
+      "symbol": "/images/card-symbols/gratitude.png",
+      "description": "Gratitude is the gift of turning the ordinary into abundance.\nIt seeks no praise, only presence.\nWhat we take for granted is so often where the treasure lies.",
+      "ritual": "Choose one small gift the day has given you.\nOffer it a silent thank you."
+    },
+    {
+      "id": "night-illusion",
+      "group": "Night",
+      "word": "Illusion",
+      "symbol": "/images/card-symbols/illusion.png",
+      "description": "The world is rich with illusion. \nWhat enchants may not be what is true.\nSee through the shimmer without losing your wonder.",
+      "ritual": "Look softly at a dim light before rest.\nClosing your eyes—see the colours that dance and linger.\nWatch them fade."
+    },
+    {
+      "id": "night-imagination",
+      "group": "Night",
+      "word": "Imagination",
+      "symbol": "/images/card-symbols/imagination.png",
+      "description": "Imagination is not a luxury, but a necessity.\nIt rises from the deep to take shape in the world when we need it most.\nNo-one else can dream your story.",
+      "ritual": "Before sleep, close your eyes to visualise a door in the half-light.\nStep through it without fear. \nWhat do you find there?"
+    },
+    {
+      "id": "night-intuition",
+      "group": "Night",
+      "word": "Intuition",
+      "symbol": "/images/card-symbols/intuition.png",
+      "description": "There is a current of truth under your skin stronger than reason.\nAre you ignoring your gut feeling?\nFollow the river back to your own deep knowing.",
+      "ritual": "Rest your hand on your belly and breathe into the sensations that stir. \nThere is power in trusting what arises within, before seeking elsewhere."
+    },
+    {
+      "id": "night-listen",
+      "group": "Night",
+      "word": "Listen",
+      "symbol": "/images/card-symbols/listen.png",
+      "description": "To listen is to lean in with the whole body, not just the ear.\nBeneath the noise, your own voice waits with patience.\nWhat becomes clear when you are quiet enough to hear it?",
+      "ritual": "Sit or lie down. \nAllow the sounds around you to drift past. \nWhat do you notice? What can you hear? \nEven silence has its own sound."
+    },
+    {
+      "id": "night-love",
+      "group": "Night",
+      "word": "Love",
+      "symbol": "/images/card-symbols/love.png",
+      "description": "You do not hold love in your hands.\nIt is the ground that bears you, the sea that carries you. \nWaiting for you to remember.",
+      "ritual": "Empty your hands, close your eyes, extend out your arms.\nSend love or receive love where it is needed—not to be seen, only to be felt."
+    },
+    {
+      "id": "night-magic",
+      "group": "Night",
+      "word": "Magic",
+      "symbol": "/images/card-symbols/magic.png",
+      "description": "Magic is the spark that exists in all things.\nIt transforms the ordinary into the sacred,\nreminding us how strange and miraculous life is.",
+      "ritual": "Think of something that you wish to magic into being. \nInvoke it by ink or by breath. \nKeep it somewhere special."
+    },
+    {
+      "id": "night-mystery",
+      "group": "Night",
+      "word": "Mystery",
+      "symbol": "/images/card-symbols/mystery.png",
+      "description": "The most vital things in life often defy explanation.\nWisdom begins where certainty ends;\nEmbrace the adventure of the unknown.",
+      "ritual": "Close your eyes.\nFeel the air touch your skin.\nInvisible energy reminds you: not all that surrounds you can be seen."
+    },
+    {
+      "id": "night-nurture",
+      "group": "Night",
+      "word": "Nurture",
+      "symbol": "/images/card-symbols/nurture.png",
+      "description": "Not everything that feeds you is nourishing.\nWhat have you been consuming that leaves you emptier, not fuller?\nChoose what restores, even when the world offers easier things.",
+      "ritual": "Before sleep, give yourself something comforting—warmth, silence, stillness, breath.\nLet it be simple.\nLet it be yours."
+    },
+    {
+      "id": "night-patience",
+      "group": "Night",
+      "word": "Patience",
+      "symbol": "/images/card-symbols/patience.png",
+      "description": "Not everything arrives on command.\nPatience is standing with the slow unfolding of things.\nCan you allow time to be your greatest teacher?",
+      "ritual": "Lie down as comfortably as possible and relax every part of you. \nFeel how everything arrives in its own time, as nature does, without rush."
+    },
+    {
+      "id": "night-presence",
+      "group": "Night",
+      "word": "Presence",
+      "symbol": "/images/card-symbols/presence.png",
+      "description": "Presence is when the soul catches up to the body.\nHow much of you is here and how much has wandered?\nBeing present, even if only to yourself, is an act of true love.",
+      "ritual": "Search out your heartbeat;\nin your wrist, your chest, your neck. \nInvite its pulse to become the lullaby that helps you drift off."
+    },
+    {
+      "id": "night-renewal",
+      "group": "Night",
+      "word": "Renewal",
+      "symbol": "/images/card-symbols/renewal.png",
+      "description": "Each night, in rest, you are remade.\nWill you be still long enough to let it happen,\nso morning can find you ready?",
+      "ritual": "With your next exhale, let something go.\nWith the inhale that follows, let in something new."
+    },
+    {
+      "id": "night-rest",
+      "group": "Night",
+      "word": "Rest",
+      "symbol": "/images/card-symbols/rest.png",
+      "description": "When did you last stop without reaching to fill the silence?\nLet the time you take to slow down be worthy of you.\nRest is the space for life to gather itself anew.",
+      "ritual": "Lie still. Soften everything. \nWith every exhale, melt away what no longer belongs to this day.\nAsk nothing else of yourself."
+    },
+    {
+      "id": "night-sacred",
+      "group": "Night",
+      "word": "Sacred",
+      "symbol": "/images/card-symbols/sacred.png",
+      "description": "The sacred is never gone, only unseen.\nIt lives not in what stands before us, but in the way we behold it.\nA small alchemy that turns the everyday into treasure.",
+      "ritual": "Bring your attention to something that is priceless to you.\nA being, a name, a memory.\nNotice what shifts when it lands in your soul."
+    },
+    {
+      "id": "night-secret",
+      "group": "Night",
+      "word": "Secret",
+      "symbol": "/images/card-symbols/secret.png",
+      "description": "We hide more than we show—our joys, our hurts, our small envies.\nBut night is kind to secrets.\nIt lets us admit what the day could not hold.",
+      "ritual": "Say or write down what you would never say aloud.\nKeep it close or let it go.\nFor tonight, it has a place to rest."
+    },
+    {
+      "id": "night-smile",
+      "group": "Night",
+      "word": "Smile",
+      "symbol": "/images/card-symbols/smile.png",
+      "description": "There is a joyful wisdom that lifts the corners of the mouth.\nA tiny act that shifts everything, \nreminding us what is good.",
+      "ritual": "Lie down and soften your face.\nSlowly allow a gentle smile to appear. \nNotice the sensations that this uplifting movement brings."
+    },
+    {
+      "id": "night-solitude",
+      "group": "Night",
+      "word": "Solitude",
+      "symbol": "/images/card-symbols/solitude.png",
+      "description": "Sometimes being alone is the only way to see yourself clearly.\nWhen did solitude last feel like a friend?\nGuarding your space is a sacred act.",
+      "ritual": "Before sleep, take five minutes to create a small sanctuary away from distraction.\nEven if only in your mind. \nLet the noise of the day fall away."
+    },
+    {
+      "id": "night-space",
+      "group": "Night",
+      "word": "Space",
+      "symbol": "/images/card-symbols/space.png",
+      "description": "We treat space as nothing—but it holds everything.\nWhat might open if you allowed more room?\nSpace is undiscovered possibility.",
+      "ritual": "Clear a little room tonight—\nIn your mind, your breath, your evening.\nLet it stay empty and see what comes."
+    },
+    {
+      "id": "night-spirit",
+      "group": "Night",
+      "word": "Spirit",
+      "symbol": "/images/card-symbols/spirit.png",
+      "description": "Your spirit moves across the rooftops, barefoot and wild.\nIt hums a tune the stars still remember.\nYou too are made of this music.",
+      "ritual": "Gently cover your eyes and ears. Start to hum softly. \nAllow the reverberation to massage every part of you."
+    },
+    {
+      "id": "night-surrender",
+      "group": "Night",
+      "word": "Surrender",
+      "symbol": "/images/card-symbols/surrender.png",
+      "description": "Let go of your grip.\nWhat arises if you stop needing to hold it all together?\nThere is a quiet strength in yielding—not giving up but giving over.",
+      "ritual": "Clench your fists. Hold them tight for a few seconds.\nThrow your hands open and let go of what you no longer need."
+    },
+    {
+      "id": "night-time",
+      "group": "Night",
+      "word": "Time",
+      "symbol": "/images/card-symbols/time.png",
+      "description": "Each day we hold the miracle of time in our hands.\nUndiscovered treasure waiting to be found. \nOnly you can decide its worth.",
+      "ritual": "Gently breathe in and out until you stop counting.\nWhen you forget to measure the moment,\nyou have entered the deepest kind of rest."
+    },
+    {
+      "id": "night-touch",
+      "group": "Night",
+      "word": "Touch",
+      "symbol": "/images/card-symbols/touch.png",
+      "description": "Touch is a quiet release of love—\nthe life force moving between all things.\nWhere we place our hands, we offer our presence.",
+      "ritual": "Before sleep, gently massage your hands with love.\nThey’ve reached, held and tended all day."
+    },
+    {
+      "id": "night-trust",
+      "group": "Night",
+      "word": "Trust",
+      "symbol": "/images/card-symbols/trust.png",
+      "description": "When the path is clouded, trust in what endures\nThe tide returns, the breath renews, love remains. \nTruth needs no followers—it stands by itself.",
+      "ritual": "Before sleep, feel the weight of your body sink into the bed.\nTrust the support of the ground beneath and the sky above."
+    },
+    {
+      "id": "night-truth",
+      "group": "Night",
+      "word": "Truth",
+      "symbol": "/images/card-symbols/truth.png",
+      "description": "It may hide in the shadows or get tangled up in noise.\nTruth is as patient as stone and bright as a diamond.\nIn time it will always reveal itself.",
+      "ritual": "Unclench your jaw and take your attention to your throat.\nVisualise a soft, swirling light in this space,\nfeeling it expand to release something long-held."
+    },
+    {
+      "id": "night-union",
+      "group": "Night",
+      "word": "Union",
+      "symbol": "/images/card-symbols/union.png",
+      "description": "We lie beneath one sky,\nthe stars keeping a quiet watch over every heart.\nKnowing somewhere, someone breathes in time with you.",
+      "ritual": "Empty your hands. \nSoften everything around you.\nFeel the inhale and exhale become one continuous wave up and down your body."
+    },
+    {
+      "id": "night-unlearn",
+      "group": "Night",
+      "word": "Unlearn",
+      "symbol": "/images/card-symbols/unlearn.png",
+      "description": "Most healing is unlearning.\nNot a loss, but the wisdom to begin again.\nAs unhelpful patterns fall away, we begin to feel the world anew.",
+      "ritual": "Before sleep, do part of your night-time routine differently.\nNo matter how small. \nNotice what shifts when a habit is replaced."
+    },
+    {
+      "id": "night-unravel",
+      "group": "Night",
+      "word": "Unravel",
+      "symbol": "/images/card-symbols/unravel.png",
+      "description": "Unravelling is how you find your way out of the maze.\nWhat have you bound so tightly it no longer lets you move?\nBreath by breath, let it come undone.",
+      "ritual": "Shake your body to release the day.\nFeel what needs to be let go and what settles in its place."
+    },
+    {
+      "id": "night-warmth",
+      "group": "Night",
+      "word": "Warmth",
+      "symbol": "/images/card-symbols/warmth.png",
+      "description": "In warmth, the heart remembers it is worthy of care.\nNot the comfort that numbs, but the kind that restores.\nWhether physical or in spirit, let it soothe your bones.",
+      "ritual": "Sitting or lying down, rub your hands together to make heat. \nPlace them where the warmth is most needed."
+    },
+    {
+      "id": "night-nidra",
+      "group": "Night",
+      "word": "Nidra",
+      "symbol": "/images/card-symbols/nidra.png",
+      "description": "When did you last step out without a phone in your hand? This card asks for something different. Keep it close until the time is right.",
+      "ritual": "Seek out a day, hour or sacred moment to rediscover your waking world, screen free. On returning, place the card back among its companions,\n\tready to appear again when your soul needs it most."
+    }
+  ]
+}
