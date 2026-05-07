@@ -34,13 +34,13 @@
       </div>
 
       <div class="header-left">
-<NuxtLink to="/" class="header-logo w-inline-block">
-  <Logo :width="84" />
-</NuxtLink>
 
 <DesktopMenu :links="navLinks" />
 
       </div>
+<NuxtLink to="/" class="header-logo w-inline-block">
+  <Logo :width="84" />
+</NuxtLink>
 
       <div class="header-right">
         <div class="header-link-wrap">

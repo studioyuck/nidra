@@ -21,32 +21,13 @@
                 <div class="txt-label">Returning to the sacred art of being human.</div>
               </div>
 
-              <div class="product-button ab-position">
-                <div class="button-text">
-                  <div class="txt-label">EXPLORE</div>
-                  <div class="button-circle">
-                    <div class="button-arrow">
-                      <img src="/images/long-arrow-right.svg" loading="lazy" alt="" class="icon-12">
-                    </div>
-                    <div class="button-arrow">
-                      <img src="/images/long-arrow-right.svg" loading="lazy" alt="" class="icon-12">
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
             </NuxtLink>
           </div>
         </div>
       </div>
 
-      <div class="home-section-05-right">
-        <img
-          loading="lazy"
-          src="/images/Nidra_BoxRenders_2315.png"
-          alt=""
-          class="tab-img"
-        >
-      </div>
+      
     </div>
   </section>
 

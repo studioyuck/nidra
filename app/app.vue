@@ -1,6 +1,6 @@
 <template>
   <div>
-      <FloatingSymbols />
+      <!-- <FloatingSymbols /> -->
   <Header />
     <NuxtPage />
     <Footer />

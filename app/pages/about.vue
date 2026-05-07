@@ -34,7 +34,7 @@ yet it may change the way you meet it.
     </div>
   </section>
   
-  <AboutPlaceholder />
+  <!-- <AboutPlaceholder /> -->
   
   
   </div>
