@@ -1,28 +1,12 @@
 <template>
 <div class="page-in">
-  <section class="home-section-01">
-    <div class="home-section-container">
-      <div class="home-section-01-left" ><div class="home-section-01-right-flex">
-        <div></div>
-          <div class="home-section-01-text-group">
-            <h1 class="txt-heading--1">Time to put your phone to bed.</h1>
-          </div>
-          <div class="home-section-01-label">
-            <div class="txt-label">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+  <section class="hero-section-01">
+    <div class="hero-section-container">
+      <div class="hero-section-01-inner" ><div class="hero-section-01-flex">
+          <div class="hero-section-01-text-group">
+            <h1 class="hero-heading-01">Time to put your phone to bed.<br>Discover your ritual each morning and each night</h1>
           </div>
         </div></div>
-      <div class="home-section-01-right">
-        <div class="home-section-01-right-flex">
-        <div></div>
-          <div class="home-section-01-text-group">
-            <h1 class="txt-heading--1">Every Night, Every Morning.</h1>
-          </div>
-          <div class="home-section-01-label">
-            <div class="txt-label">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-          </div>
-        </div>
-        <div class="home-section-01-blur" />
-      </div>
     </div>
   </section>
   <ProductPlaceholder />
