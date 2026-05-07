@@ -59,11 +59,11 @@ const delays = [
         { 'is-drawing': isDrawing }
       ]"
     >
-<img
-  :src="`/images/card-symbols/${currentCard.word}.png`"
-  :alt="`${currentCard.word} symbol`"
-  class="card-symbol"
-/>
+      <img
+        :src="currentCard.symbol"
+        :alt="`${currentCard.word} symbol`"
+        class="card-symbol"
+      />
 
       <div class="card-bottom">
         <h2 class="card-word">
@@ -105,7 +105,7 @@ const delays = [
   display: grid;
   justify-items: center;
   gap: 2rem;
-  padding: 5em;
+  padding: 5em 15px;
   text-align: center;
 }
 
