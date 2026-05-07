@@ -5,7 +5,7 @@
         id="w-node-a263df6f-82e0-d251-302a-4ac297bde21b-97bde219"
         class="footer-title"
       >
-        <NuxtLink to="/" class="header-logo w-inline-block">
+        <NuxtLink to="/" class=" w-inline-block">
           <img
             src="/images/Wordmark-silver.svg"
             loading="lazy"

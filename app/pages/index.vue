@@ -11,10 +11,15 @@
   </section>
   
   <section class="section section--padding-large section--center">
-                  <img
-                  src="/images/candle.png"
-                  class="max-width-60"
-                />
+                <NuxtImg
+  src="/images/candle.png"
+  class="max-width-60"
+  loading="lazy"
+  format="webp"
+  quality="80"
+  sizes="sm:100vw md:60vw lg:40vw"
+  alt=""
+/>
   </section>
    <section id="section" class="section section--padding-large">
     <div class="copy-01_container">
@@ -34,10 +39,15 @@ A simple, beautiful place to set the phone down at the close of your day.</p>
   
   
   <section class="section section--padding-large section--center">
-                  <img
-                  src="/images/shadow.png"
-                  class="max-width-60"
-                />
+        <NuxtImg
+  src="/images/shadow.png"
+  class="max-width-60"
+  loading="lazy"
+  format="webp"
+  quality="80"
+  sizes="sm:100vw md:60vw lg:40vw"
+  alt=""
+/>
   </section>
 
   <!-- <AboutPlaceholder /> -->
