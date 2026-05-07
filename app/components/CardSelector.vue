@@ -59,11 +59,11 @@ const delays = [
         { 'is-drawing': isDrawing }
       ]"
     >
-      <img
-        :src="currentCard.symbol"
-        :alt="`${currentCard.word} symbol`"
-        class="card-symbol"
-      />
+<img
+  :src="`/images/card-symbols/${currentCard.word}.png`"
+  :alt="`${currentCard.word} symbol`"
+  class="card-symbol"
+/>
 
       <div class="card-bottom">
         <h2 class="card-word">
