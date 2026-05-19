@@ -1,11 +1,6 @@
 <template>
   <div class="page-in page--nav-padding">
-  <section class="splash-02">
-    <div class="splash-02_text">
-    <!-- 
-      <h1 class="txt-heading--2">Duis aute irure dolor <br>in reprehenderit in voluptate</h1> -->
-    </div>
-  </section>
+
 
   <section id="section" class="section section--border section--padding-large">
     <div class="copy-01_container">
@@ -27,7 +22,7 @@ Strange only when forgotten.<br>
 This ritual will not change your world overnight,<br>
 yet it may change the way you meet it.
 </p>
-        <img src="/images/Pratika-dark.svg" loading="lazy" alt="" class="symbol">
+        <img src="/images/Pratika-light.svg" loading="lazy" alt="" class="symbol">
 <p>Let the start and the end be yours.</p
 </p>
       </div>
@@ -42,6 +37,26 @@ yet it may change the way you meet it.
 
 <script setup>
 definePageMeta({
-  headerTheme: 'dark'
+  headerTheme: 'light'
 })
 </script>
+
+<style scoped>
+.page-in {
+  background-image: url('/images/hero-1.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--day-shadow);
+}
+
+.page-in :deep(.splash-02) {
+  background-image: none;
+}
+
+.page-in :deep(p),
+.page-in :deep(h1),
+.page-in :deep(h2),
+.page-in :deep(h3) {
+  color: var(--day-shadow);
+}
+</style>

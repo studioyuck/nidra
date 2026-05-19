@@ -42,15 +42,14 @@
   --b600: #52403a;
   --b500: #6b554f;
   --sunlight: #e27d2d;
+  --outer-padding: 28px;
 }
 
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.4s ease;
+.page-enter-active {
+  transition: opacity 0.6s ease;
 }
 
-.page-enter-from,
-.page-leave-to {
+.page-enter-from {
   opacity: 0;
 }
 
@@ -1458,9 +1457,11 @@ blockquote {
 
 
 
+
+
 .hero-section-01 {
   width: 100%;
-  height: 110svw;
+  height: 100hv;
 }
 
 .hero-section-container {
@@ -1470,15 +1471,16 @@ blockquote {
   grid-template-columns: 1fr;
   grid-auto-columns: 1fr;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: grid;
 }
 
 .hero-section-01-inner {
-  background-image: url('../images/hero-1.png');
-  background-position:top-center;
+  background-image: url('../images/hero-2.jpg');
+  background-position:top right;
   background-repeat: no-repeat;
-  background-size:100%;
+  background-size:cover;
+  height:100vh;
   position: relative;
     color: var(--early-white);
 }
@@ -1542,7 +1544,7 @@ blockquote {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 24px;
+  padding: 24px var(--outer-padding);
   display: flex;
 }
 
@@ -1835,7 +1837,7 @@ blockquote {
   border-color: var(--early-white);
 }
 
-.section { padding:100px; }
+.section { padding: 100px var(--outer-padding); }
 
 .section.section--border {
   border-bottom: 1px solid var(--gold-10);
@@ -3360,11 +3362,11 @@ blockquote {
   .header-container {
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 20px var(--outer-padding);
   }
 
   .header-container.dark {
-    padding: 20px;
+    padding: 20px var(--outer-padding);
   }
 
   .header-left {
@@ -3470,7 +3472,7 @@ blockquote {
   }
 
   .section {
-    padding: 100px 10px;
+    padding: 100px var(--outer-padding);
   }
 
   .copy-01_text {
@@ -3596,9 +3598,7 @@ blockquote {
     grid-template-columns: 1fr 1fr;
   }
 
-  .footer {
-    margin-top: 100px;
-  }
+
 
   .footer-container {
     grid-row-gap: 48px;
@@ -4178,7 +4178,14 @@ blockquote {
   border-bottom-color:transparent;
 }
 
-.header--scrolled {   border-bottom-color:var(--gold-10); }
+.header--scrolled {
+  background: var(--b100);
+  border-bottom-color: var(--gold-10);
+}
+
+.header--no-border {
+  border-bottom-color: transparent !important;
+}
 
 .header .txt-label,
 .header .menu-text,
@@ -4381,6 +4388,7 @@ a { transition:all ease-in-out 0.5s; }
   
 }
 .q__answers-button {
+  font-family: Cloister, Times New Roman, serif;
   padding: 1em;
   border: 1px solid var(--shadow);
   border-radius: var(--radius);
@@ -4398,8 +4406,8 @@ a { transition:all ease-in-out 0.5s; }
 
 .q__answers-button.selected {
   /* example style, override as needed */
-  background-color: var(--accent);
-  color: var(--base);
+  background-color: var(--shadow);
+  color: var(--primary);
 }
 
 .q__answers-button--continue {   background: var(--shadow); }
@@ -4456,17 +4464,19 @@ padding: 1em;
 /* ──────────────────────────────────────────────────────────────────────────
    Fade-slide transition (used by <transition name="fade-slide">)
 ────────────────────────────────────────────────────────────────────────── */
-.fade-slide-enter-active,
+.fade-slide-enter-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
 .fade-slide-leave-active {
-  transition: all 1s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
 }
 .fade-slide-enter-from {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(12px);
 }
 .fade-slide-leave-to {
   opacity: 0;
-  transform: translateY(-30px);
+  transform: translateY(-8px);
 }
 
 .page--survey {
@@ -4524,9 +4534,39 @@ font-size:38px;
 
 
 .page--survey {
+  position: relative;
   background: var(--base);
   color: var(--primary);
-  background-image: var(--bg);
-      background-size: cover;
-    background-position: center;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+/* Background image layer — sits behind all content */
+.survey__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+/* Content sits above the bg layer */
+.survey__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Background cross-fade transition */
+.survey-bg-enter-active,
+.survey-bg-leave-active {
+  transition: opacity 0.8s ease;
+}
+.survey-bg-enter-from,
+.survey-bg-leave-to {
+  opacity: 0;
 }

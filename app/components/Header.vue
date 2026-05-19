@@ -3,18 +3,18 @@
     class="header"
     :class="[
       headerThemeClass,
-      { 'header--scrolled': isScrolled }
+      { 'header--scrolled': isScrolled || route.meta.headerSolid },
+      { 'header--no-border': route.meta.headerSolid && !isScrolled }
     ]"
   >
-   
-   
-   <MobileMenu
-  :is-open="isMenuOpen"
-  :links="navLinks"
-  @close="isMenuOpen = false"
-/>
+    <MobileMenu
+      :is-open="isMenuOpen"
+      :links="allLinks"
+      @close="isMenuOpen = false"
+    />
 
     <div class="header-container">
+      <!-- Hamburger — mobile only (hidden on desktop via .mobile-menu-wrap CSS) -->
       <div class="mobile-menu-wrap">
         <a
           href="#"
@@ -33,34 +33,21 @@
         </a>
       </div>
 
+      <!-- Left nav — desktop only -->
       <div class="header-left">
-
-<DesktopMenu :links="navLinks" />
-
+        <DesktopMenu :links="leftLinks" />
       </div>
-<NuxtLink to="/" class="header-logo w-inline-block">
-  <Logo :width="84" />
-</NuxtLink>
 
+      <NuxtLink to="/" class="header-logo w-inline-block">
+        <Logo :width="84" />
+      </NuxtLink>
+
+      <!-- Right nav — desktop only -->
       <div class="header-right">
-        <div class="header-link-wrap">
-          <a href="#" class="cart-button w-inline-block" @click.prevent>
-            <div class="txt-label w-inline-block">Cart</div>
-          </a>
-
-          <a
-            href="#"
-            class="menu-link m-hide w-inline-block"
-            @click.prevent="isMenuOpen = true"
-          >
-            <div class="txt-label">MENU</div>
-
-          </a>
-        </div>
+        <DesktopMenu :links="rightLinks" />
       </div>
     </div>
   </div>
-
 </template>
 
 <script setup>
@@ -68,12 +55,17 @@ const route = useRoute()
 const isMenuOpen = ref(false)
 const isScrolled = ref(false)
 
-const navLinks = [
+const leftLinks = [
   { label: 'Shop', to: '/shop' },
-  { label: 'Altar Your Habits', to: '/altar-your-habits' },
+  { label: 'Altar Your Habits', to: '/altar-your-habits' }
+]
+
+const rightLinks = [
   { label: 'About', to: '/about' },
   { label: 'Survey', to: '/survey' }
 ]
+
+const allLinks = [...leftLinks, ...rightLinks]
 
 const headerThemeClass = computed(() => {
   return route.meta.headerTheme === 'light' ? 'header--light' : 'header--dark'

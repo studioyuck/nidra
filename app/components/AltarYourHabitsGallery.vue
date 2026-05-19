@@ -1,72 +1,69 @@
 <template>
-  <section class="section">
-    <div class="copy-03__container">
-      <div
-        id="w-node-c2d0fa42-6085-1dd6-cd5d-0d1dbe407155-a5e8b050"
-        class="article-list__container"
-      >
-        <div class="article-list">
-          <div class="article-item">
-            <NuxtLink to="/altar-your-habits-single" class="article-link w-inline-block">
-              <div class="zoom-wrap">
-                <NuxtImg
-                  src="/images/altar-1.png"
-                  alt=""
-                  loading="lazy"
-                  format="webp"
-                  quality="80"
-                  sizes="sm:100vw md:50vw lg:25vw"
-                />
-              </div>
-            </NuxtLink>
-          </div>
-
-          <div class="article-item">
-            <NuxtLink to="/altar-your-habits-single" class="article-link w-inline-block">
-              <div class="zoom-wrap">
-                <NuxtImg
-                  src="/images/altar-2.png"
-                  alt=""
-                  loading="lazy"
-                  format="webp"
-                  quality="80"
-                  sizes="sm:100vw md:50vw lg:25vw"
-                />
-              </div>
-            </NuxtLink>
-          </div>
-
-          <div class="article-item">
-            <NuxtLink to="/altar-your-habits-single" class="article-link w-inline-block">
-              <div class="zoom-wrap">
-                <NuxtImg
-                  src="/images/altar-3.png"
-                  alt=""
-                  loading="lazy"
-                  format="webp"
-                  quality="80"
-                  sizes="sm:100vw md:50vw lg:25vw"
-                />
-              </div>
-            </NuxtLink>
-          </div>
-
-          <div class="article-item">
-            <NuxtLink to="/altar-your-habits-single" class="article-link w-inline-block">
-              <div class="zoom-wrap">
-                <NuxtImg
-                  src="/images/altar-4.png"
-                  alt=""
-                  loading="lazy"
-                  format="webp"
-                  quality="80"
-                  sizes="sm:100vw md:50vw lg:25vw"
-                />
-              </div>
-            </NuxtLink>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="ayh-gallery">
+    <NuxtLink
+      v-for="(img, i) in images"
+      :key="i"
+      to="/altar-your-habits-single"
+      class="ayh-gallery__item"
+    >
+      <NuxtImg
+        :src="img"
+        alt=""
+        loading="lazy"
+        format="webp"
+        quality="80"
+        sizes="sm:100vw md:50vw"
+      />
+    </NuxtLink>
+  </div>
 </template>
+
+<script setup>
+const images = [
+  '/images/altar-1.png',
+  '/images/altar-2.png',
+  '/images/altar-3.png',
+  '/images/altar-4.png',
+  '/images/altar-3.png',
+  '/images/altar-4.png',
+  '/images/altar-1.png',
+  '/images/altar-2.png',
+]
+</script>
+
+<style scoped>
+.ayh-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  width: 100%;
+}
+
+.ayh-gallery__item {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+
+.ayh-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.ayh-gallery__item:hover img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 767px) {
+  .ayh-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .ayh-gallery__item {
+    aspect-ratio: 4 / 5;
+  }
+}
+</style>

@@ -115,13 +115,11 @@
           { "label": "I don’t feel deeply rested" },
           { "label": "My body feels a subtle tension that lingers" },
           { "label": "I’m rarely fully present" },
-          { "label": "My brain feels like it is slowly shrinking" },
           { "label": "I watch things that aren’t relevant or helpful to my life" },
           { "label": "I sense that others are distracted in my company" },
           { "label": "It stops me from doing things I’d like to be doing" },
           { "label": "Time just disappears" },
-          { "label": "No, my phone only has a positive impact in my life" },
-          { "label": "Other (please share)" }
+          { "label": "No, my phone only has a positive impact in my life" }
         ]
       },
       {
@@ -136,9 +134,7 @@
           { "label": "Less urgency or pressure to respond or act" },
           { "label": "I’d pay attention to how I actually feel" },
           { "label": "Attentive listening to the people that count" },
-          { "label": "It would inspire me to be more spontaneous" },
-          { "label": "By looking up, I’d notice more" },
-          { "label": "Other (please share)" }
+          { "label": "It would inspire me to be more spontaneous" }
         ]
       },
       {

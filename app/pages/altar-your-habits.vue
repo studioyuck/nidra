@@ -1,14 +1,16 @@
 <template>
-  <div class="page-in page--nav-padding">
-  
-  <AltarYourHabitsGallery />
-  
-  
+  <div class="ayh-page">
+    <AltarYourHabitsGallery />
   </div>
 </template>
 
 <script setup>
-definePageMeta({
-  headerTheme: 'dark'
-})
+definePageMeta({ headerTheme: 'light', headerSolid: true })
 </script>
+
+<style scoped>
+.ayh-page {
+  display: flex;
+  flex-direction: column;
+}
+</style>

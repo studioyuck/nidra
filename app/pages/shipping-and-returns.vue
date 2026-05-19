@@ -1,42 +1,105 @@
+<script setup>
+definePageMeta({ headerTheme: 'dark' })
+</script>
+
 <template>
-  <div class="page-in page--nav-padding">
-    <div class="ds-grid">
-      <div
-        id="w-node-a66f730f-bc44-73da-1842-782e58ae5d3c-a5e8b05d"
-        class="ds-info"
-      >
-        <h2>Shipping</h2>
-      </div>
+  <ContentPage title="Shipping & Returns">
+    <div class="sr-grid">
 
-      <div
-        id="w-node-a66f730f-bc44-73da-1842-782e58ae5d3e-a5e8b05d"
-        class="ds-contents"
-      >
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</div><br>
-        <div>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-       <br><br>
-       <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</div><br>
-        <div>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-      </div>
+      <section class="sr-section">
+        <h2 class="sr-section__title txt-label">Delivery</h2>
+        <div class="sr-blocks">
+          <div class="sr-block">
+            <p class="sr-block__label txt-label">United Kingdom</p>
+            <p class="sr-block__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          </div>
+          <div class="sr-block">
+            <p class="sr-block__label txt-label">Europe</p>
+            <p class="sr-block__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.</p>
+          </div>
+          <div class="sr-block">
+            <p class="sr-block__label txt-label">Rest of World</p>
+            <p class="sr-block__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris.</p>
+          </div>
+          <div class="sr-block">
+            <p class="sr-block__label txt-label">Packaging</p>
+            <p class="sr-block__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="sr-divider" />
+
+      <section class="sr-section">
+        <h2 class="sr-section__title txt-label">Returns & Exchanges</h2>
+        <div class="sr-blocks">
+          <div class="sr-block">
+            <p class="sr-block__label txt-label">Our Policy</p>
+            <p class="sr-block__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.</p>
+          </div>
+          <div class="sr-block">
+            <p class="sr-block__label txt-label">How to Return</p>
+            <p class="sr-block__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="sr-block">
+            <p class="sr-block__label txt-label">Refunds</p>
+            <p class="sr-block__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          </div>
+          <div class="sr-block">
+            <p class="sr-block__label txt-label">Exchanges</p>
+            <p class="sr-block__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </section>
+
     </div>
-
-    <div class="ds-grid">
-      <div
-        id="w-node-ea166c27-76e3-d1dc-c8e3-79bb8b4fb01d-a5e8b05d"
-        class="ds-info"
-      >
-        <h2>Returns</h2>
-      </div>
-
-      <div
-        id="w-node-ea166c27-76e3-d1dc-c8e3-79bb8b4fb020-a5e8b05d"
-        class="ds-contents"
-      >
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</div><br>
-        <div>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-        <br><br><div>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</div><br>
-        <div>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-      </div>
-    </div>
-  </div>
+  </ContentPage>
 </template>
+
+<style scoped>
+.sr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0 48px;
+}
+
+.sr-divider {
+  background: var(--gold-10);
+}
+
+.sr-section__title {
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin: 0 0 40px;
+}
+
+.sr-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sr-block__label {
+  margin: 0 0 10px;
+  letter-spacing: 0.1em;
+  opacity: 0.5;
+}
+
+.sr-block__body {
+  margin: 0;
+  font-size: 18px;
+  line-height: normal;
+}
+
+@media (max-width: 767px) {
+  .sr-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sr-divider {
+    height: 1px;
+    width: 100%;
+    margin: 48px 0;
+  }
+}
+</style>

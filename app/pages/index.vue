@@ -4,7 +4,6 @@
     <div class="hero-section-container">
       <div class="hero-section-01-inner" ><div class="hero-section-01-flex">
           <div class="hero-section-01-text-group">
-            <h1 class="hero-heading-01">Time to put your phone to bed.<br>Discover your ritual each morning and each night</h1>
           </div>
         </div></div>
     </div>
@@ -12,7 +11,7 @@
   
   <section class="section section--padding-large section--center">
                 <NuxtImg
-  src="/images/candle.png"
+  src="/images/9.png"
   class="max-width-60"
   loading="lazy"
   format="webp"
@@ -35,12 +34,12 @@ A simple, beautiful place to set the phone down at the close of your day.</p>
     </div>
   </section>
   
-  <ProductPlaceholder />
+
   
   
   <section class="section section--padding-large section--center">
         <NuxtImg
-  src="/images/shadow.png"
+  src="/images/10.png"
   class="max-width-60"
   loading="lazy"
   format="webp"
@@ -51,13 +50,21 @@ A simple, beautiful place to set the phone down at the close of your day.</p>
   </section>
 
   <!-- <AboutPlaceholder /> -->
-  <AltarYourHabitsGallery />
-  
+  <ScrollGallery :images="productImages" link="/product/nidra-box" />
+
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 definePageMeta({
   headerTheme: 'light'
 })
+
+const productImages = [
+  '/images/product-images/1.png',
+  '/images/product-images/2.png',
+  '/images/product-images/3.png',
+  '/images/product-images/4.png',
+  '/images/product-images/5.png'
+]
 </script>
