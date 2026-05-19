@@ -123,8 +123,7 @@ const specsOpen = ref(false)
     <div class="product-mobile-info">
 
       <div class="product-info__header">
-        <div class="txt-label product-info__label">The Nidra Collection</div>
-        <h1 class="product-info__name">{{ product.name }}</h1>
+<h1 class="product-info__name">{{ product.name }}</h1>
         <p class="product-info__tagline">{{ product.tagline }}</p>
       </div>
 
