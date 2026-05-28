@@ -1,11 +1,10 @@
 <template>
-  <div class="ayh-page">
-    <AltarYourHabitsGallery />
-  </div>
+  <ContentPage title="Alter Your Habits">
+  </ContentPage>
 </template>
 
 <script setup>
-definePageMeta({ headerTheme: 'light', headerSolid: true })
+definePageMeta({ headerTheme: 'dark', headerSolid: false })
 </script>
 
 <style scoped>

@@ -56,13 +56,14 @@ const isMenuOpen = ref(false)
 const isScrolled = ref(false)
 
 const leftLinks = [
+  { label: 'Home', to: '/' },
   { label: 'Shop', to: '/shop' },
   { label: 'Altar Your Habits', to: '/altar-your-habits' }
 ]
 
 const rightLinks = [
   { label: 'About', to: '/about' },
-  { label: 'Survey', to: '/survey' }
+  { label: 'Take the Survey', to: '/survey' }
 ]
 
 const allLinks = [...leftLinks, ...rightLinks]

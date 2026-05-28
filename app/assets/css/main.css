@@ -53,6 +53,18 @@
   opacity: 0;
 }
 
+/* Leaving the survey: survey fades out while new page is already fully visible */
+.survey-exit-leave-active {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: opacity 0.25s ease;
+}
+.survey-exit-leave-to {
+  opacity: 0;
+}
+/* No enter rule — new page starts at full opacity immediately, no async wait */
+
 .w-commerce-commercecartwrapper {
   display: inline-block;
   position: relative;
@@ -4197,7 +4209,8 @@ blockquote {
 .header .menu-circle,
 .header .icon-12,
 .header svg,
-.header svg path {
+.header svg path,
+.header svg rect {
   transition: color 0.3s ease, border-color 0.3s ease, stroke 0.3s ease, opacity 0.3s ease;
 }
 
@@ -4249,7 +4262,8 @@ blockquote {
 /* lines / strokes */
 .header--light .line-line,
 .header--light .menu-circle,
-.header--light svg path {
+.header--light svg path,
+.header--light svg rect {
   color: var(--day-shadow);
   stroke: var(--day-shadow);
   border-color: var(--day-shadow);
@@ -4260,7 +4274,8 @@ blockquote {
 
 .header--dark .line-line,
 .header--dark .menu-circle,
-.header--dark svg path {
+.header--dark svg path,
+.header--dark svg rect {
   color: var(--midnight-blue);
   stroke: var(--midnight-blue);
   border-color: var(--midnight-blue);
@@ -4411,6 +4426,8 @@ a { transition:all ease-in-out 0.5s; }
 }
 
 .q__answers-button--continue {   background: var(--shadow); }
+.q__answers-button--skip { background: transparent; border-color: transparent; opacity: 0.45; transition: opacity 0.3s; }
+.q__answers-button--skip:hover { background: transparent; border-color: transparent; opacity: 1; }
 
 .q__text-input {
 padding: 1em;
@@ -4512,6 +4529,32 @@ padding: 1em;
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
+   Survey start screen
+────────────────────────────────────────────────────────────────────────── */
+.survey__start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
+}
+
+.survey__start-title {
+  font-family: Cloister, Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 1;
+  margin: 0;
+  color: var(--primary);
+}
+
+.survey__start-btn {
+  width: auto;
+  min-width: 180px;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
    Survey wrapper & headings
 ────────────────────────────────────────────────────────────────────────── */
 .survey__wrapper {
@@ -4535,8 +4578,8 @@ font-size:38px;
 
 .page--survey {
   position: relative;
-  background: var(--base);
-  color: var(--primary);
+  background: var(--base, #131627);
+  color: var(--primary, #ACADB8);
   transition: background-color 0.8s ease, color 0.8s ease;
 }
 
@@ -4569,4 +4612,34 @@ font-size:38px;
 .survey-bg-enter-from,
 .survey-bg-leave-to {
   opacity: 0;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Survey — mobile sizing
+────────────────────────────────────────────────────────────────────────── */
+@media screen and (max-width: 640px) {
+  .heading {
+    font-size: 26px;
+    line-height: 1.1em;
+  }
+
+  .survey__intro,
+  .survey__question {
+    grid-row-gap: 1.2em;
+    gap: 1.2em;
+  }
+
+  .q__answers {
+    gap: 6px;
+  }
+
+  .q__answers-button {
+    padding: 0.6em 0.8em;
+    font-size: 17px;
+  }
+
+  .q__answers-button--continue {
+    padding: 0.6em 0.8em;
+    font-size: 17px;
+  }
 }

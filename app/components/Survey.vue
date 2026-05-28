@@ -9,9 +9,20 @@
     <!-- Content sits above the bg layer -->
     <div class="survey__content">
     <transition name="fade-slide" mode="out-in">
+      <!-- Start screen -->
+      <div v-if="state === 'start'" class="survey__start">
+        <h1 class="survey__start-title">You and your phone</h1>
+        <button
+          class="q__answers-button q__answers-button--continue survey__start-btn"
+          @click="state = 'nightIntro'"
+        >
+          Start Survey
+        </button>
+      </div>
+
       <!-- Night Intro -->
       <CategoryIntro
-        v-if="state === 'nightIntro'"
+        v-else-if="state === 'nightIntro'"
         :title="survey.night.title"
         :description="survey.night.description"
         @continue="startNight"
@@ -32,11 +43,18 @@
         />
         <button
           v-if="currentQuestion.input_type !== 'single_choice'"
-          :disabled="lastPoints === null"
+          :disabled="!currentQuestion.optional && lastAnswer === null"
           class="q__answers-button q__answers-button--continue"
           @click="submitAnswer('night')"
         >
           Continue
+        </button>
+        <button
+          v-if="currentQuestion.optional && currentQuestion.input_type === 'single_choice'"
+          class="q__answers-button q__answers-button--skip"
+          @click="skipQuestion('night')"
+        >
+          Skip
         </button>
       </div>
 
@@ -63,11 +81,18 @@
         />
         <button
           v-if="currentQuestion.input_type !== 'single_choice'"
-          :disabled="lastPoints === null"
+          :disabled="!currentQuestion.optional && lastAnswer === null"
           class="q__answers-button q__answers-button--continue"
           @click="submitAnswer('day')"
         >
           Continue
+        </button>
+        <button
+          v-if="currentQuestion.optional && currentQuestion.input_type === 'single_choice'"
+          class="q__answers-button q__answers-button--skip"
+          @click="skipQuestion('day')"
+        >
+          Skip
         </button>
       </div>
 
@@ -94,18 +119,25 @@
         />
         <button
           v-if="currentQuestion.input_type !== 'single_choice'"
-          :disabled="lastPoints === null"
+          :disabled="!currentQuestion.optional && lastAnswer === null"
           class="q__answers-button q__answers-button--continue"
           @click="submitAnswer('ritual')"
         >
           Continue
+        </button>
+        <button
+          v-if="currentQuestion.optional && currentQuestion.input_type === 'single_choice'"
+          class="q__answers-button q__answers-button--skip"
+          @click="skipQuestion('ritual')"
+        >
+          Skip
         </button>
       </div>
 
       <!-- Results -->
       <SurveyResult
         v-else-if="state === 'results'"
-        :results="results"
+        :results="answers"
       />
     </transition>
     </div><!-- /survey__content -->
@@ -126,8 +158,23 @@ const props = defineProps({
 
 const state = ref(props.initialState)
 const questionIndex = ref(0)
-const results = reactive({})
-const lastPoints = ref(null)
+const answers = reactive({})
+const lastAnswer = ref(null)
+
+const submissionId = crypto.randomUUID()
+const startTimestamp = new Date().toISOString()
+const surveyCompleted = ref(false)
+
+function sendBeaconNow() {
+  if (surveyCompleted.value || !Object.keys(answers).length) return
+  const payload = JSON.stringify({
+    id: submissionId,
+    timestamp: startTimestamp,
+    completed: false,
+    answers: { ...answers }
+  })
+  navigator.sendBeacon('/api/survey-results', new Blob([payload], { type: 'application/json' }))
+}
 
 const musicEnabled = useState('music', () => false)
 
@@ -155,13 +202,22 @@ watch(state, (newState) => {
   themeTimer = setTimeout(() => { themeState.value = newState }, LEAVE_MS)
 })
 
-onUnmounted(() => {
+onBeforeUnmount(() => {
   clearTimeout(themeTimer)
   clearTimeout(sectionTimer)
 })
 
+// Clear theme/section timers the moment navigation starts — before the leave
+// transition begins — so no background-color CSS transition can fire and make
+// Vue wait an extra 0.8s for transitionend before unmounting.
+onBeforeRouteLeave(() => {
+  clearTimeout(themeTimer)
+  clearTimeout(sectionTimer)
+  sendBeaconNow()
+})
+
 function themeFor(s) {
-  if (s === 'nightIntro' || s === 'nightQuestions') {
+  if (s === 'start' || s === 'nightIntro' || s === 'nightQuestions') {
     return { '--shadow': '#2F324D', '--base': '#131627', '--primary': '#ACADB8', '--accent': '#C1E3F4' }
   }
   if (s === 'dayIntro' || s === 'dayQuestions') {
@@ -173,7 +229,7 @@ function themeFor(s) {
 const themeVars = computed(() => themeFor(themeState.value))
 
 const bgKey = computed(() => {
-  if (themeState.value === 'nightIntro' || themeState.value === 'nightQuestions') return 'night'
+  if (themeState.value === 'start' || themeState.value === 'nightIntro' || themeState.value === 'nightQuestions') return 'night'
   if (themeState.value === 'dayIntro' || themeState.value === 'dayQuestions') return 'day'
   return 'ritual'
 })
@@ -203,18 +259,27 @@ function startRitual() {
   state.value = 'ritualQuestions'
 }
 
-function onAnswered(points) {
-  lastPoints.value = points
+function onAnswered(answer) {
+  lastAnswer.value = answer
   if (currentQuestion.value.input_type === 'single_choice') {
     submitAnswer(currentSection.value)
   }
 }
 
 function submitAnswer(section) {
-  const pts = lastPoints.value || 0
-  if (!results[section]) results[section] = 0
-  results[section] += pts
-  lastPoints.value = null
+  const q = currentQuestion.value
+  const answer = lastAnswer.value
+
+  if (q.input_type === 'contact') {
+    answers['contact_name'] = answer?.name ?? ''
+    answers['contact_email'] = answer?.email ?? ''
+  } else if (Array.isArray(answer)) {
+    answers[q.id] = answer.join('|')
+  } else {
+    answers[q.id] = answer ?? ''
+  }
+
+  lastAnswer.value = null
 
   const isLast = questionIndex.value >= survey[section].questions.length - 1
   progress.value.current = survey[section].questions.length
@@ -226,13 +291,37 @@ function submitAnswer(section) {
   } else if (section === 'day') {
     sectionTimer = setTimeout(() => { state.value = 'ritualIntro' }, 400)
   } else {
+    surveyCompleted.value = true
     state.value = 'results'
+    saveSurveyResults()
+  }
+}
+
+function skipQuestion(section) {
+  lastAnswer.value = null
+  submitAnswer(section)
+}
+
+async function saveSurveyResults() {
+  try {
+    await $fetch('/api/survey-results', {
+      method: 'POST',
+      body: {
+        id: submissionId,
+        timestamp: startTimestamp,
+        completed: true,
+        answers: { ...answers }
+      }
+    })
+  } catch {
+    // fail silently — don't interrupt the user experience
   }
 }
 
 // ── Arrow-key navigation (for testing) ─────────────────────────────────────
 function goForward() {
   const s = state.value
+  if (s === 'start') return (state.value = 'nightIntro')
   if (s === 'nightIntro') return startNight()
   if (s === 'nightQuestions') return submitAnswer('night')
   if (s === 'dayIntro') return startDay()
@@ -262,8 +351,15 @@ function onKeydown(e) {
   if (e.key === 'ArrowLeft') goBack()
 }
 
-onMounted(() => window.addEventListener('keydown', onKeydown))
-onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
+onMounted(() => {
+  window.addEventListener('keydown', onKeydown)
+  window.addEventListener('beforeunload', sendBeaconNow)
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('keydown', onKeydown)
+  window.removeEventListener('beforeunload', sendBeaconNow)
+})
+onBeforeRouteLeave(sendBeaconNow)
 
 // ── Progress ────────────────────────────────────────────────────────────────
 const progress = useState('progress', () => ({ current: 0, total: 0 }))

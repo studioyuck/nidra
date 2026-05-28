@@ -9,7 +9,7 @@ export default defineNuxtConfig({
 ],
 
   app: {
-    pageTransition: { name: 'page' },
+    pageTransition: false,
     head: {
       title: 'Nidra – Put your phone to bed.',
       meta: [

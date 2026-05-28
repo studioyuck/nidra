@@ -1,5 +1,37 @@
 <script setup lang="ts">
 const { isOpen, close } = useWaitingList()
+
+const name = ref('')
+const email = ref('')
+const submitted = ref(false)
+const submitting = ref(false)
+
+watch(isOpen, (val) => {
+  if (!val) {
+    setTimeout(() => {
+      name.value = ''
+      email.value = ''
+      submitted.value = false
+      submitting.value = false
+    }, 300)
+  }
+})
+
+async function submit() {
+  if (!email.value || submitting.value) return
+  submitting.value = true
+  try {
+    await $fetch('/api/waiting-list', {
+      method: 'POST',
+      body: { name: name.value, email: email.value }
+    })
+    submitted.value = true
+  } catch {
+    // fail silently
+  } finally {
+    submitting.value = false
+  }
+}
 </script>
 
 <template>
@@ -13,26 +45,35 @@ const { isOpen, close } = useWaitingList()
         <div class="modal">
           <button class="modal__close txt-label" @click="close">✕</button>
 
-          <div class="modal__header">
-            <h2 class="modal__title">Join the Waiting List</h2>
-            <p class="modal__subtitle">Be the first to know when Nidra is available.</p>
-          </div>
+          <Transition name="swap" mode="out-in">
+            <div v-if="!submitted" key="form">
+              <div class="modal__header">
+                <h2 class="modal__title">Join the Waiting List</h2>
+                <p class="modal__subtitle">Be the first to know when Nidra is available.</p>
+              </div>
 
-          <form class="modal__form" @submit.prevent>
-            <div class="modal__field">
-              <label class="txt-label" for="wl-name">Name</label>
-              <input id="wl-name" type="text" placeholder="Your name" autocomplete="name" />
+              <form class="modal__form" @submit.prevent="submit">
+                <div class="modal__field">
+                  <label class="txt-label" for="wl-name">Name</label>
+                  <input id="wl-name" v-model="name" type="text" placeholder="Your name" autocomplete="name" />
+                </div>
+
+                <div class="modal__field">
+                  <label class="txt-label" for="wl-email">Email</label>
+                  <input id="wl-email" v-model="email" type="email" placeholder="your@email.com" autocomplete="email" required />
+                </div>
+
+                <button type="submit" class="modal__submit txt-label" :disabled="submitting">
+                  {{ submitting ? 'Joining…' : 'Join the List' }}
+                </button>
+              </form>
             </div>
 
-            <div class="modal__field">
-              <label class="txt-label" for="wl-email">Email</label>
-              <input id="wl-email" type="email" placeholder="your@email.com" autocomplete="email" />
+            <div v-else key="thankyou" class="modal__thankyou">
+              <h2 class="modal__title">You're on the list.</h2>
+              <p class="modal__subtitle">We'll be in touch when Nidra is ready. Thank you.</p>
             </div>
-
-            <button type="submit" class="modal__submit txt-label">
-              Join the List
-            </button>
-          </form>
+          </Transition>
         </div>
       </div>
     </Transition>
@@ -43,7 +84,7 @@ const { isOpen, close } = useWaitingList()
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(19, 22, 39, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -53,8 +94,8 @@ const { isOpen, close } = useWaitingList()
 }
 
 .modal {
-  background: var(--beige);
-  color: var(--midnight-blue);
+  background: var(--midnight-blue);
+  color: var(--silver);
   width: 100%;
   max-width: 440px;
   padding: 48px 40px 40px;
@@ -68,7 +109,7 @@ const { isOpen, close } = useWaitingList()
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--midnight-blue);
+  color: var(--silver);
   font-size: 12px;
   letter-spacing: 0.05em;
   padding: 4px 8px;
@@ -90,12 +131,14 @@ const { isOpen, close } = useWaitingList()
   font-size: 28px;
   line-height: 1.2;
   margin: 0 0 8px;
+  color: var(--silver);
 }
 
 .modal__subtitle {
   font-family: Bdogrotesk Vf, Arial, sans-serif;
   font-size: 14px;
-  color: var(--b400);
+  color: var(--silver);
+  opacity: 0.55;
   margin: 0;
 }
 
@@ -114,44 +157,65 @@ const { isOpen, close } = useWaitingList()
 .modal__field label {
   font-size: 11px;
   letter-spacing: 0.08em;
-  color: var(--b400);
+  color: var(--silver);
+  opacity: 0.55;
 }
 
 .modal__field input {
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--b200);
+  border-bottom: 1px solid rgba(172, 173, 184, 0.25);
   padding: 8px 0;
   font-family: Bdogrotesk Vf, Arial, sans-serif;
   font-size: 15px;
-  color: var(--midnight-blue);
+  color: var(--silver);
   outline: none;
   transition: border-color 0.2s ease;
 }
 
 .modal__field input::placeholder {
-  color: var(--b300);
+  color: rgba(172, 173, 184, 0.35);
 }
 
 .modal__field input:focus {
-  border-bottom-color: var(--midnight-blue);
+  border-bottom-color: var(--silver);
 }
 
 .modal__submit {
   margin-top: 8px;
-  background: var(--midnight-blue);
+  background: transparent;
   color: var(--silver);
-  border: 1px solid var(--midnight-blue);
+  border: 1px solid rgba(172, 173, 184, 0.4);
   padding: 14px 24px;
   cursor: pointer;
   font-size: 12px;
   letter-spacing: 0.08em;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .modal__submit:hover {
-  background: transparent;
+  background: var(--silver);
   color: var(--midnight-blue);
+  border-color: var(--silver);
+}
+
+.modal__thankyou {
+  padding: 16px 0 8px;
+}
+
+.modal__submit:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.swap-enter-active,
+.swap-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.swap-enter-from,
+.swap-leave-to {
+  opacity: 0;
 }
 
 .modal-enter-active,

@@ -2,7 +2,7 @@
 definePageMeta({ headerTheme: 'light' })
 
 const route = useRoute()
-const initialState = route.query.preview === 'results' ? 'results' : 'nightIntro'
+const initialState = route.query.preview === 'results' ? 'results' : 'start'
 </script>
 
 <template>

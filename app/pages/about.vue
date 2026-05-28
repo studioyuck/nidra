@@ -37,16 +37,16 @@ yet it may change the way you meet it.
 
 <script setup>
 definePageMeta({
-  headerTheme: 'light'
+  headerTheme: 'dark'
 })
 </script>
 
 <style scoped>
 .page-in {
-  background-image: url('/images/hero-1.png');
+  background-image: url('/images/bg-day.jpg');
   background-size: cover;
   background-position: center;
-  color: var(--day-shadow);
+  color: var(--midnight-blue);
 }
 
 .page-in :deep(.splash-02) {
@@ -57,6 +57,6 @@ definePageMeta({
 .page-in :deep(h1),
 .page-in :deep(h2),
 .page-in :deep(h3) {
-  color: var(--day-shadow);
+  color: var(--midnight-blue);
 }
 </style>
