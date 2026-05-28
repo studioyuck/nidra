@@ -97,7 +97,7 @@ const emit = defineEmits(['close'])
 }
 
 .mobile-menu__text {
-  font-size: 54px;
+  font-size: 46px;
   line-height: 1em;
 }
 

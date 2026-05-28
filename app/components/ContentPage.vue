@@ -39,6 +39,16 @@ defineProps({
   .cp__title {
     font-size: 2.8rem;
   }
+
+  .cp__header {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .cp__body {
+    padding-top: 48px;
+    padding-bottom: 72px;
+  }
 }
 
 .cp__body {

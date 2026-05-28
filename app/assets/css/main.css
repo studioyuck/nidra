@@ -58,6 +58,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
+  pointer-events: none;
   transition: opacity 0.25s ease;
 }
 .survey-exit-leave-to {
@@ -3861,6 +3862,16 @@ blockquote {
 }
 
 @media screen and (max-width: 767px) {
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .section.section--border.section--padding-large {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
   .txt-heading--1 {
     font-size: 42px;
   }
@@ -4590,6 +4601,7 @@ font-size:38px;
   background-size: cover;
   background-position: center;
   z-index: 0;
+  pointer-events: none;
 }
 
 /* Content sits above the bg layer */

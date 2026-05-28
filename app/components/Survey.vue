@@ -14,7 +14,7 @@
         <h1 class="survey__start-title">You and your phone</h1>
         <button
           class="q__answers-button q__answers-button--continue survey__start-btn"
-          @click="state = 'nightIntro'"
+          @click="beginSurvey"
         >
           Start Survey
         </button>
@@ -161,15 +161,20 @@ const questionIndex = ref(0)
 const answers = reactive({})
 const lastAnswer = ref(null)
 
-const submissionId = crypto.randomUUID()
-const startTimestamp = new Date().toISOString()
+const submissionId = ref('')
+const startTimestamp = ref('')
 const surveyCompleted = ref(false)
+
+onMounted(() => {
+  submissionId.value = crypto.randomUUID()
+  startTimestamp.value = new Date().toISOString()
+})
 
 function sendBeaconNow() {
   if (surveyCompleted.value || !Object.keys(answers).length) return
   const payload = JSON.stringify({
-    id: submissionId,
-    timestamp: startTimestamp,
+    id: submissionId.value,
+    timestamp: startTimestamp.value,
     completed: false,
     answers: { ...answers }
   })
@@ -177,6 +182,7 @@ function sendBeaconNow() {
 }
 
 const musicEnabled = useState('music', () => false)
+const surveyActive = useState('surveyActive', () => false)
 
 // compute section and current question
 const currentSection = computed(() => {
@@ -213,6 +219,7 @@ onBeforeUnmount(() => {
 onBeforeRouteLeave(() => {
   clearTimeout(themeTimer)
   clearTimeout(sectionTimer)
+  surveyActive.value = false
   sendBeaconNow()
 })
 
@@ -241,6 +248,11 @@ const currentBgImage = computed(() => {
 })
 
 // ── Navigation ──────────────────────────────────────────────────────────────
+function beginSurvey() {
+  surveyActive.value = true
+  state.value = 'nightIntro'
+}
+
 function startNight() {
   questionIndex.value = 0
   progress.value.current = 0
@@ -307,8 +319,8 @@ async function saveSurveyResults() {
     await $fetch('/api/survey-results', {
       method: 'POST',
       body: {
-        id: submissionId,
-        timestamp: startTimestamp,
+        id: submissionId.value,
+        timestamp: startTimestamp.value,
         completed: true,
         answers: { ...answers }
       }

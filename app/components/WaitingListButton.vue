@@ -1,9 +1,14 @@
 <script setup>
 const { open } = useWaitingList()
+const surveyActive = useState('surveyActive', () => false)
 </script>
 
 <template>
-  <button class="wl-button txt-label" @click="open">
+  <button
+    class="wl-button txt-label"
+    :class="{ 'wl-button--hidden': surveyActive }"
+    @click="open"
+  >
     Join Waiting List
     <img src="/images/pratika-animated.gif" alt="" class="wl-button__icon" />
   </button>
@@ -24,8 +29,12 @@ const { open } = useWaitingList()
   cursor: pointer;
   font-size: 12px;
   letter-spacing: 0.08em;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
+}
+
+.wl-button--hidden {
+  transform: translateY(calc(100% + var(--outer-padding) + 4px));
 }
 
 .wl-button:hover {
