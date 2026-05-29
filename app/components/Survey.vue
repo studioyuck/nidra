@@ -11,7 +11,10 @@
     <transition name="fade-slide" mode="out-in">
       <!-- Start screen -->
       <div v-if="state === 'start'" class="survey__start">
-        <h1 class="survey__start-title">You and your phone</h1>
+        <div class="survey__start-copy">
+          <h1 class="survey__start-title">Do you sleep with your phone?</h1>
+          <p class="survey__start-subtitle">A three minute survey on rituals and boundaries around your phone</p>
+        </div>
         <button
           class="q__answers-button q__answers-button--continue survey__start-btn"
           @click="beginSurvey"

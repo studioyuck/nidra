@@ -40,32 +40,6 @@ const { timeOfDay } = useTimeOfDay()
           </NuxtLink>
           <p class="footer-tagline">Put your phone to bed.</p>
         </div>
-
-        <div class="footer-nav">
-          <div class="footer-link-group">
-            <NuxtLink to="/shop" class="footer-link w-inline-block">
-              <div class="txt-label">SHOP</div>
-            </NuxtLink>
-            <NuxtLink to="/altar-your-habits" class="footer-link w-inline-block">
-              <div class="txt-label">ALTAR YOUR HABITS</div>
-            </NuxtLink>
-            <NuxtLink to="/about" class="footer-link w-inline-block">
-              <div class="txt-label">ABOUT</div>
-            </NuxtLink>
-          </div>
-
-          <div class="footer-link-group">
-            <NuxtLink to="/shipping-and-returns" class="footer-link w-inline-block">
-              <div class="txt-label">SHIPPING &amp; RETURNS</div>
-            </NuxtLink>
-            <NuxtLink to="/faq" class="footer-link w-inline-block">
-              <div class="txt-label">FAQ</div>
-            </NuxtLink>
-            <NuxtLink to="/contact" class="footer-link w-inline-block">
-              <div class="txt-label">CONTACT</div>
-            </NuxtLink>
-          </div>
-        </div>
       </div>
 
       <div class="footer-bottom">

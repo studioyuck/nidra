@@ -57,13 +57,11 @@ const isScrolled = ref(false)
 
 const leftLinks = [
   { label: 'Home', to: '/' },
-  { label: 'Shop', to: '/shop' },
   { label: 'Altar Your Habits', to: '/altar-your-habits' }
 ]
 
 const rightLinks = [
-  { label: 'About', to: '/about' },
-  { label: 'Take the Survey', to: '/survey' }
+  { label: 'Take the Survey', to: '/' }
 ]
 
 const allLinks = [...leftLinks, ...rightLinks]
