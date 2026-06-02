@@ -121,8 +121,8 @@
       },
       {
         "id": "q_contact",
-        "question": "Will you join us?",
-        "description": "Our dream is to transform our relationship with phones into something wiser, less distracted and infinitely more beautiful. Starting with the very first limited edition Nidra box and cards coming in 2026.",
+        "question": "The world of Nidra is coming soon.",
+        "description": "Objects and offerings to inspire rituals for a more beautiful relationship with your phone.",
         "input_type": "contact",
         "optional": true
       }

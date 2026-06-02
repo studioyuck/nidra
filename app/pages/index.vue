@@ -13,9 +13,6 @@
             Start Survey
           </NuxtLink>
 
-          <p>The world of Nidra is coming soon.<br><br>
-Objects and offerings to inspire rituals for a more beautiful relationship with your phone.</p>
-
           <NidraSignoff />
 
         </div>
