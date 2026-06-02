@@ -9,9 +9,12 @@ function computeTimeOfDay(): 'day' | 'night' {
 export function useTimeOfDay() {
   const timeOfDay = useState<'day' | 'night'>('timeOfDay', () => computeTimeOfDay())
 
-  // Only run the interval on the client
+  // Only run on the client
   if (import.meta.client) {
     const update = () => { timeOfDay.value = computeTimeOfDay() }
+
+    // Correct immediately in case SSR computed in a different timezone
+    update()
 
     // Re-check every minute so a page left open stays accurate
     const interval = setInterval(update, 60_000)
