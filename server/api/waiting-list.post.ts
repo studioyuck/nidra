@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
       body: {
         records: [{
           fields: {
-            Timestamp:    new Date().toISOString(),
+            Timestamp:    new Date().toISOString().slice(0, 10),
             Name:         String(body.name ?? ''),
             Email:        String(body.email ?? ''),
             'IP Address': String(ip),
