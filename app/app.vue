@@ -1,5 +1,15 @@
 <template>
   <div class="app-shell">
+    <!-- Hand-drawn border filter — referenced as url('#rough') in CSS -->
+    <svg width="0" height="0" style="position:absolute">
+      <defs>
+        <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="5" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+
     <!-- <FloatingSymbols /> -->
     <Header />
     <div class="app-shell__content">

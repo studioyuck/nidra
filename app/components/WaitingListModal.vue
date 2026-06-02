@@ -49,7 +49,8 @@ async function submit() {
             <div v-if="!submitted" key="form">
               <div class="modal__header">
                 <h2 class="modal__title">Join the Waiting List</h2>
-                <p class="modal__subtitle">Be the first to know when Nidra is available.</p>
+                <p class="modal__subtitle">Be the first to put your phone to bed. 
+</p>
               </div>
 
               <form class="modal__form" @submit.prevent="submit">
@@ -182,21 +183,33 @@ async function submit() {
 }
 
 .modal__submit {
+  position: relative;
   margin-top: 8px;
   background: transparent;
   color: var(--silver);
-  border: 1px solid rgba(172, 173, 184, 0.4);
+  border: none;
   padding: 14px 24px;
   cursor: pointer;
   font-size: 12px;
   letter-spacing: 0.08em;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
+  border-radius: 5px;
+  filter: url('#rough');
+}
+
+.modal__submit::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border: 1px solid var(--silver);
+  border-radius: 5px;
+  filter: url('#rough');
+  pointer-events: none;
 }
 
 .modal__submit:hover {
   background: var(--silver);
   color: var(--midnight-blue);
-  border-color: var(--silver);
 }
 
 .modal__thankyou {

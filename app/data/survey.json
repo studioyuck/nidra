@@ -1,7 +1,7 @@
 {
   "night": {
     "title": "A Sacred Sleep",
-    "description": "A ritual of rest",
+    "description": "",
     "questions": [
       {
         "id": "q1",
@@ -22,12 +22,12 @@
       },
       {
         "id": "q3",
-        "question": "Where does your phone sleep at night?",
+        "question": "Where does your phone usually sleep at night?",
         "input_type": "single_choice",
         "options": [
           { "label": "I have a special designated place away from my bed" },
           { "label": "In another room" },
-          { "label": "On a bedside table" },
+          { "label": "In the bedroom" },
           { "label": "In bed with me" },
           { "label": "Somewhere else" }
         ]
@@ -48,7 +48,7 @@
   },
   "day": {
     "title": "A Present Day",
-    "description": "A ritual of return",
+    "description": "",
     "questions": [
       {
         "id": "q5",
@@ -85,7 +85,7 @@
       },
       {
         "id": "q8",
-        "question": "Do you feel what you take in first thing through screens can affect your mood?",
+        "question": "Does what you take in first thing through screens can affect your mood?",
         "input_type": "single_choice",
         "options": [{ "label": "Yes" }, { "label": "No" }, { "label": "Sometimes" }]
       }
@@ -108,36 +108,6 @@
         ]
       },
       {
-        "id": "q10",
-        "question": "In a world of relentless distraction, do any of the following resonate?",
-        "input_type": "multi_choice",
-        "options": [
-          { "label": "I don’t feel deeply rested" },
-          { "label": "My body feels a subtle tension that lingers" },
-          { "label": "I’m rarely fully present" },
-          { "label": "I watch things that aren’t relevant or helpful to my life" },
-          { "label": "I sense that others are distracted in my company" },
-          { "label": "It stops me from doing things I’d like to be doing" },
-          { "label": "Time just disappears" },
-          { "label": "No, my phone only has a positive impact in my life" }
-        ]
-      },
-      {
-        "id": "q11",
-        "question": "If you chose to create more space between you and your phone—even briefly— how might your life be better? (Select all that apply)",
-        "input_type": "multi_choice",
-        "options": [
-          { "label": "My sleep would be less disturbed" },
-          { "label": "I would have more energy in my body" },
-          { "label": "I might feel more focus and clarity" },
-          { "label": "A sense of pride in myself" },
-          { "label": "Less urgency or pressure to respond or act" },
-          { "label": "I’d pay attention to how I actually feel" },
-          { "label": "Attentive listening to the people that count" },
-          { "label": "It would inspire me to be more spontaneous" }
-        ]
-      },
-      {
         "id": "q12",
         "question": "If you had ten more minutes away from your phone each day, what might you give that time to?",
         "input_type": "text"
@@ -147,25 +117,6 @@
         "question": "Want to stay in touch?",
         "input_type": "contact",
         "optional": true
-      },
-      {
-        "id": "q13",
-        "question": "Can you tell us your age?",
-        "input_type": "single_choice",
-        "optional": true,
-        "options": [
-          { "label": "18–29" },
-          { "label": "30–44" },
-          { "label": "45–59" },
-          { "label": "60+" }
-        ]
-      },
-      {
-        "id": "q14",
-        "question": "Can you tell us your gender?",
-        "input_type": "single_choice",
-        "optional": true,
-        "options": [{ "label": "Male" }, { "label": "Female" }, { "label": "Non binary" }]
       }
     ]
   }

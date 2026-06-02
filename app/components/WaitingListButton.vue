@@ -20,17 +20,30 @@ const surveyActive = useState('surveyActive', () => false)
   bottom: var(--outer-padding);
   left: var(--outer-padding);
   z-index: 9000;
+  isolation: isolate;
   display: flex;
   align-items: center;
   gap: 10px;
-  background: var(--midnight-blue);
+  background: transparent;
   color: var(--silver);
   padding: 2px 15px;
   cursor: pointer;
   font-size: 12px;
   letter-spacing: 0.08em;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.2s ease, transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
+  border-radius: 5px;
+}
+
+.wl-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--midnight-blue);
+  border-radius: 5px;
+  filter: url('#rough');
+  z-index: -1;
+  transition: background 0.2s ease;
 }
 
 .wl-button--hidden {
@@ -38,8 +51,11 @@ const surveyActive = useState('surveyActive', () => false)
 }
 
 .wl-button:hover {
-  background: var(--silver);
   color: var(--midnight-blue);
+}
+
+.wl-button:hover::before {
+  background: var(--silver);
 }
 
 .wl-button__icon {

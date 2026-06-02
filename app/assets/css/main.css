@@ -22,7 +22,14 @@
   font-display: swap;
 }
 
+@media screen and (min-width: 1024px) {
+  :root {
+    --outer-padding: 36px;
+  }
+}
+
 :root {
+  --radius: 5px;
   --day-shadow: #ebe6df;
   --midnight-blue: #131627;
   --beige: #f4f2ef;
@@ -43,6 +50,26 @@
   --b500: #6b554f;
   --sunlight: #e27d2d;
   --outer-padding: 28px;
+}
+
+/* ── Hand-drawn border feel — applied via ::before so button text stays sharp */
+.q__answers-button--continue,
+.survey__nav-btn,
+.result__draw-btn {
+  position: relative;
+  border: none;
+}
+
+.q__answers-button--continue::before,
+.survey__nav-btn::before,
+.result__draw-btn::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border: 1px solid currentColor;
+  border-radius: var(--radius);
+  filter: url('#rough');
+  pointer-events: none;
 }
 
 .page-enter-active {
@@ -1878,6 +1905,12 @@ blockquote {
   margin-left: auto;
   margin-right: auto;
   display: flex;
+}
+
+@media screen and (min-width: 768px) {
+  .copy-01_text {
+    max-width: 620px;
+  }
 }
 
 .button-text {
@@ -4420,10 +4453,11 @@ a { transition:all ease-in-out 0.5s; }
   border-radius: var(--radius);
   background: transparent;
   color: var(--accent);
-      width: 100%;
+  width: 100%;
   transition:
     background 0.3s,
-    color 0.3s;
+    color 0.3s,
+    opacity 0.3s;
 }
 .q__answers-button:hover {
   background: var(--shadow);
@@ -4630,6 +4664,40 @@ font-size:38px;
   align-items: center;
   justify-content: center;
   flex: 1;
+}
+
+/* Fixed prev/next navigation */
+.survey__nav {
+  position: fixed;
+  bottom: var(--outer-padding);
+  right: var(--outer-padding);
+  display: flex;
+  gap: 8px;
+  z-index: 100;
+}
+
+.survey__nav-btn {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.survey__nav-btn:hover:not(:disabled) {
+  opacity: 1;
+}
+
+.survey__nav-btn:disabled {
+  opacity: 0.15;
+  cursor: default;
 }
 
 /* Background cross-fade transition */

@@ -79,6 +79,13 @@ function onAnimationEnd() {
 
           <!-- Pre-draw: button + result text. Fades out as a unit. -->
           <div class="result__pre-draw" :class="{ 'is-hidden': hasDrawn }">
+
+            <div class="result__text">
+              <p>Your relationship with your phone isn't a problem to be measured — it's a life to be lived, beautifully. 
+<br><br>
+As a gift, our first Nidra offering to you:
+<br><br>
+
             <button
               class="result__draw-btn txt-label"
               :disabled="animState !== 'idle'"
@@ -86,13 +93,14 @@ function onAnimationEnd() {
             >
               {{ animState === 'spinning' ? 'Drawing...' : 'Draw Card' }}
             </button>
-            <div class="result__text">
-              <p>You're not a number.</p>
-              <p>We won't give you a type, a colour, or a score. You are not data. You're a human being — tender, tired, radiant, real. And deep down, you already know: more connection is needed. Not the digital kind. The kind that comes from presence. From paying attention to your own life.</p>
-              <p>Whether or not you buy a box, start a ritual, or change a single habit — remember this:</p>
-              <p>You are not a statistic. You are someone whose time matters.</p>
-              <p>Forget the result.</p>
-              <p>Live. Connect. Begin again.</p>
+
+<br><br>
+Ritual brings us back to our senses, one small act at a time.
+<br><br>
+Is it time to altar your habits?
+<br><br>
+Not to escape the world. But to meet it with your soul intact.
+</p>
             </div>
           </div>
 
@@ -161,6 +169,13 @@ function onAnimationEnd() {
   max-width: 520px;
 }
 
+@media (min-width: 768px) {
+  .result__right {
+    width: 580px;
+    max-width: 580px;
+  }
+}
+
 /* ── Grid stacking: both content blocks occupy the same cell ─────────────── */
 .result__content-stack {
   display: grid;
@@ -170,7 +185,6 @@ function onAnimationEnd() {
 .result__card-text {
   grid-area: 1 / 1;
   transition: opacity 0.45s ease;
-  padding-top: 1.5rem;
 }
 
 .result__card-text {

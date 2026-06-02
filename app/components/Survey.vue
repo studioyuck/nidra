@@ -9,23 +9,9 @@
     <!-- Content sits above the bg layer -->
     <div class="survey__content">
     <transition name="fade-slide" mode="out-in">
-      <!-- Start screen -->
-      <div v-if="state === 'start'" class="survey__start">
-        <div class="survey__start-copy">
-          <h1 class="survey__start-title">Do you sleep with your phone?</h1>
-          <p class="survey__start-subtitle">A three minute survey on rituals and boundaries around your phone</p>
-        </div>
-        <button
-          class="q__answers-button q__answers-button--continue survey__start-btn"
-          @click="beginSurvey"
-        >
-          Start Survey
-        </button>
-      </div>
-
       <!-- Night Intro -->
       <CategoryIntro
-        v-else-if="state === 'nightIntro'"
+        v-if="state === 'nightIntro'"
         :title="survey.night.title"
         :description="survey.night.description"
         @continue="startNight"
@@ -42,6 +28,7 @@
         </div>
         <SurveyQuestion
           :question="currentQuestion"
+          :saved-answer="currentSavedAnswer"
           @answered="onAnswered"
         />
         <button
@@ -80,6 +67,7 @@
         </div>
         <SurveyQuestion
           :question="currentQuestion"
+          :saved-answer="currentSavedAnswer"
           @answered="onAnswered"
         />
         <button
@@ -118,6 +106,7 @@
         </div>
         <SurveyQuestion
           :question="currentQuestion"
+          :saved-answer="currentSavedAnswer"
           @answered="onAnswered"
         />
         <button
@@ -144,6 +133,23 @@
       />
     </transition>
     </div><!-- /survey__content -->
+
+    <!-- Fixed prev/next navigation -->
+    <div v-if="state !== 'results'" class="survey__nav">
+      <button
+        class="survey__nav-btn"
+        :disabled="!canGoBack"
+        @click="goBack"
+        aria-label="Previous"
+      >←</button>
+      <button
+        class="survey__nav-btn"
+        :disabled="!canGoForward"
+        @click="goForward"
+        aria-label="Next"
+      >→</button>
+    </div>
+
   </div>
 </template>
 
@@ -171,6 +177,7 @@ const surveyCompleted = ref(false)
 onMounted(() => {
   submissionId.value = crypto.randomUUID()
   startTimestamp.value = new Date().toISOString()
+  surveyActive.value = true
 })
 
 function sendBeaconNow() {
@@ -196,6 +203,18 @@ const currentSection = computed(() => {
 
 const currentQuestion = computed(() => {
   return survey[currentSection.value]?.questions[questionIndex.value]
+})
+
+const currentSavedAnswer = computed(() => {
+  if (!currentQuestion.value) return null
+  const q = currentQuestion.value
+  if (q.input_type === 'contact') {
+    const name = answers['contact_name'] ?? ''
+    const email = answers['contact_email'] ?? ''
+    return (name || email) ? { name, email } : null
+  }
+  const saved = answers[q.id]
+  return (saved !== undefined && saved !== '') ? saved : null
 })
 
 // ── Theme sequencing ────────────────────────────────────────────────────────
@@ -227,7 +246,7 @@ onBeforeRouteLeave(() => {
 })
 
 function themeFor(s) {
-  if (s === 'start' || s === 'nightIntro' || s === 'nightQuestions') {
+  if (s === 'nightIntro' || s === 'nightQuestions') {
     return { '--shadow': '#2F324D', '--base': '#131627', '--primary': '#ACADB8', '--accent': '#C1E3F4' }
   }
   if (s === 'dayIntro' || s === 'dayQuestions') {
@@ -239,7 +258,7 @@ function themeFor(s) {
 const themeVars = computed(() => themeFor(themeState.value))
 
 const bgKey = computed(() => {
-  if (themeState.value === 'start' || themeState.value === 'nightIntro' || themeState.value === 'nightQuestions') return 'night'
+  if (themeState.value === 'nightIntro' || themeState.value === 'nightQuestions') return 'night'
   if (themeState.value === 'dayIntro' || themeState.value === 'dayQuestions') return 'day'
   return 'ritual'
 })
@@ -250,11 +269,25 @@ const currentBgImage = computed(() => {
   return '/images/bg-mixed.jpg'
 })
 
+// Restore lastAnswer when navigating to a question that was already answered
+watch([state, questionIndex], () => {
+  if (state.value.endsWith('Questions')) {
+    lastAnswer.value = currentSavedAnswer.value
+  } else {
+    lastAnswer.value = null
+  }
+})
+
 // ── Navigation ──────────────────────────────────────────────────────────────
-function beginSurvey() {
-  surveyActive.value = true
-  state.value = 'nightIntro'
-}
+const canGoBack = computed(() => state.value !== 'nightIntro')
+
+const canGoForward = computed(() => {
+  if (state.value.endsWith('Intro')) return true
+  if (!currentQuestion.value) return true
+  if (currentQuestion.value.optional) return true
+  if (currentQuestion.value.input_type === 'single_choice') return true
+  return lastAnswer.value !== null
+})
 
 function startNight() {
   questionIndex.value = 0
@@ -336,7 +369,6 @@ async function saveSurveyResults() {
 // ── Arrow-key navigation (for testing) ─────────────────────────────────────
 function goForward() {
   const s = state.value
-  if (s === 'start') return (state.value = 'nightIntro')
   if (s === 'nightIntro') return startNight()
   if (s === 'nightQuestions') return submitAnswer('night')
   if (s === 'dayIntro') return startDay()

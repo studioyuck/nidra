@@ -4,7 +4,7 @@
       <li v-for="(option, index) in question.options" :key="index">
         <button
           class="q__answers-button"
-          :class="isMulti ? { selected: isSelected(option) } : ''"
+          :class="{ selected: isSelected(option) }"
           @click="handleClick(option)"
         >
           {{ option.label }}
@@ -43,14 +43,34 @@
 
 <script setup>
 const props = defineProps({
-  question: { type: Object, required: true }
+  question: { type: Object, required: true },
+  savedAnswer: { default: null }
 })
 const emit = defineEmits(['answered'])
 
-const selectedOptions = ref([])
-const textAnswer = ref('')
-const contactName = ref('')
-const contactEmail = ref('')
+// Restore multi-choice selections from saved pipe-separated string
+const selectedOptions = ref(
+  props.question.input_type === 'multi_choice' && props.savedAnswer
+    ? String(props.savedAnswer).split('|').map(label => ({ label }))
+    : []
+)
+
+// Restore single-choice selection
+const lastSelected = ref(
+  props.question.input_type === 'single_choice' && props.savedAnswer
+    ? props.savedAnswer
+    : null
+)
+
+const textAnswer = ref(
+  props.question.input_type === 'text' ? (props.savedAnswer || '') : ''
+)
+const contactName = ref(
+  props.question.input_type === 'contact' ? (props.savedAnswer?.name || '') : ''
+)
+const contactEmail = ref(
+  props.question.input_type === 'contact' ? (props.savedAnswer?.email || '') : ''
+)
 
 const isMulti    = computed(() => props.question.input_type === 'multi_choice')
 const isText     = computed(() => props.question.input_type === 'text')
@@ -59,6 +79,7 @@ const isChoice   = computed(() => props.question.input_type === 'single_choice' 
 
 function handleClick(option) {
   if (!isMulti.value) {
+    lastSelected.value = option.label
     emit('answered', option.label)
     return
   }
@@ -72,7 +93,8 @@ function handleClick(option) {
 }
 
 function isSelected(option) {
-  return selectedOptions.value.some(o => o.label === option.label)
+  if (isMulti.value) return selectedOptions.value.some(o => o.label === option.label)
+  return lastSelected.value === option.label
 }
 </script>
 
