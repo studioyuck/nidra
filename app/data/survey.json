@@ -28,8 +28,7 @@
           { "label": "I have a special designated place away from my bed" },
           { "label": "In another room" },
           { "label": "In the bedroom" },
-          { "label": "In bed with me" },
-          { "label": "Somewhere else" }
+          { "label": "In bed with me" }
         ]
       },
       {
@@ -40,8 +39,7 @@
           { "label": "Yes, every night" },
           { "label": "Sometimes" },
           { "label": "Rarely" },
-          { "label": "Never" },
-          { "label": "I’m not sure" }
+          { "label": "Never" }
         ]
       }
     ]
@@ -85,7 +83,7 @@
       },
       {
         "id": "q8",
-        "question": "Does what you take in first thing through screens can affect your mood?",
+        "question": "Does what you take in first thing through screens affect your mood?",
         "input_type": "single_choice",
         "options": [{ "label": "Yes" }, { "label": "No" }, { "label": "Sometimes" }]
       }
@@ -103,8 +101,17 @@
           { "label": "Not at all" },
           { "label": "Not often" },
           { "label": "More than I realise" },
-          { "label": "All the time" },
-          { "label": "N/A" }
+          { "label": "All the time" }
+        ]
+      },
+      {
+        "id": "q10",
+        "question": "Are your phone habits taking more than they give?",
+        "input_type": "single_choice",
+        "options": [
+          { "label": "Yes — far more than I'd like to admit" },
+          { "label": "Sometimes — it ebbs and flows" },
+          { "label": "Not yet — but I'm paying attention" }
         ]
       },
       {
@@ -114,7 +121,8 @@
       },
       {
         "id": "q_contact",
-        "question": "Want to stay in touch?",
+        "question": "Will you join us?",
+        "description": "Our dream is to transform our relationship with phones into something wiser, less distracted and infinitely more beautiful. Starting with the very first limited edition Nidra box and cards coming in 2026.",
         "input_type": "contact",
         "optional": true
       }

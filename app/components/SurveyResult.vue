@@ -138,7 +138,7 @@ function onAnimationEnd() {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding: 4rem var(--outer-padding) 6rem;
+  padding: 4rem var(--outer-padding);
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -395,7 +395,6 @@ function onAnimationEnd() {
 }
 
 .result__signoff {
-  margin-top: 3rem;
   opacity: 0.7;
 }
 
@@ -434,7 +433,7 @@ function onAnimationEnd() {
 /* ── Desktop layout ──────────────────────────────────────────────────────── */
 @media (min-width: 768px) {
   .result {
-    padding: 6rem var(--outer-padding) 8rem;
+    padding: 6rem var(--outer-padding);
     gap: 2.5rem;
   }
 

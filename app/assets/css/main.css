@@ -4370,7 +4370,8 @@ blockquote {
 
 .header--scrolled .line-line,
 .header--scrolled .menu-circle,
-.header--scrolled svg path {
+.header--scrolled svg path,
+.header--scrolled svg rect {
   color: var(--midnight-blue);
   stroke: var(--midnight-blue);
   border-color: var(--midnight-blue);
@@ -4463,6 +4464,18 @@ a { transition:all ease-in-out 0.5s; }
   display: flex;
   justify-content: center;
   color: var(--accent);
+}
+
+.q__description {
+  margin: 0;
+  align-self: center;
+  color: var(--primary);
+  opacity: 0.75;
+  font-family: Cloister, Georgia, serif;
+  font-style: normal;
+  font-size: 22px;
+  text-align: center;
+  max-width: 420px;
 }
 .q__answers {
   list-style: none;
@@ -4693,6 +4706,7 @@ font-size:38px;
   justify-content: center;
   flex: 1;
 }
+
 
 /* Fixed prev/next navigation */
 .survey__nav {

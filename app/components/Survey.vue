@@ -26,6 +26,9 @@
         <div class="heading q__header">
           {{ currentQuestion.question }}
         </div>
+        <p v-if="currentQuestion.description" class="q__description">
+          {{ currentQuestion.description }}
+        </p>
         <SurveyQuestion
           :question="currentQuestion"
           :saved-answer="currentSavedAnswer"
@@ -65,6 +68,9 @@
         <div class="heading q__header">
           {{ currentQuestion.question }}
         </div>
+        <p v-if="currentQuestion.description" class="q__description">
+          {{ currentQuestion.description }}
+        </p>
         <SurveyQuestion
           :question="currentQuestion"
           :saved-answer="currentSavedAnswer"
@@ -104,6 +110,9 @@
         <div class="heading q__header">
           {{ currentQuestion.question }}
         </div>
+        <p v-if="currentQuestion.description" class="q__description">
+          {{ currentQuestion.description }}
+        </p>
         <SurveyQuestion
           :question="currentQuestion"
           :saved-answer="currentSavedAnswer"
