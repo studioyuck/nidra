@@ -31,6 +31,12 @@ function onAnimationEnd() {
   <div class="result">
     <h1 class="result__title" :class="{ 'is-hidden': hasDrawn }">The Result?</h1>
 
+    <!-- Intro text: sits above card on mobile, hidden on desktop (shown inside right col) -->
+    <div class="result__intro result__intro--mobile" :class="{ 'is-hidden': hasDrawn }">
+      <p>Your relationship with your phone isn't a problem to be measured — it's a life to be lived, beautifully.<br><br>
+      As a gift, our first Nidra offering to you:</p>
+    </div>
+
     <div class="result__body">
       <!-- Left: card -->
       <div class="result__left">
@@ -77,14 +83,14 @@ function onAnimationEnd() {
       <div class="result__right">
         <div class="result__content-stack">
 
-          <!-- Pre-draw: button + result text. Fades out as a unit. -->
+          <!-- Pre-draw content: fades out as a unit -->
           <div class="result__pre-draw" :class="{ 'is-hidden': hasDrawn }">
 
-            <div class="result__text">
-              <p>Your relationship with your phone isn't a problem to be measured — it's a life to be lived, beautifully. 
-<br><br>
-As a gift, our first Nidra offering to you:
-<br><br>
+            <!-- Intro text: desktop only (mobile version sits above card) -->
+            <p class="result__intro result__intro--desktop">
+              Your relationship with your phone isn't a problem to be measured — it's a life to be lived, beautifully.<br><br>
+              As a gift, our first Nidra offering to you:
+            </p>
 
             <button
               class="result__draw-btn txt-label"
@@ -94,14 +100,12 @@ As a gift, our first Nidra offering to you:
               {{ animState === 'spinning' ? 'Drawing...' : 'Draw Card' }}
             </button>
 
-<br><br>
-Ritual brings us back to our senses, one small act at a time.
-<br><br>
-Is it time to altar your habits?
-<br><br>
-Not to escape the world. But to meet it with your soul intact.
-</p>
-            </div>
+            <p class="result__cta-text">
+              Ritual brings us back to our senses, one small act at a time.<br><br>
+              Is it time to altar your habits?<br><br>
+              Not to escape the world. But to meet it with your soul intact.
+            </p>
+
           </div>
 
           <!-- Post-draw: card description + ritual. Fades in as a unit. -->
@@ -123,6 +127,9 @@ Not to escape the world. But to meet it with your soul intact.
         </div>
       </div>
     </div>
+
+    <NidraSignoff class="result__signoff" />
+
   </div>
 </template>
 
@@ -201,6 +208,16 @@ Not to escape the world. But to meet it with your soul intact.
   user-select: none;
 }
 
+/* ── Intro text visibility ───────────────────────────────────────────────── */
+.result__intro {
+  margin: 0;
+  font-size: 22px;
+}
+
+/* Mobile: shown above card (natural DOM position), hidden inside right col */
+.result__intro--desktop { display: none; }
+.result__intro--mobile  { display: block; text-align: center; max-width: 560px; }
+
 /* ── Pre-draw content ────────────────────────────────────────────────────── */
 .result__pre-draw {
   display: flex;
@@ -208,13 +225,7 @@ Not to escape the world. But to meet it with your soul intact.
   gap: 1.5rem;
 }
 
-.result__text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.result__text p {
+.result__cta-text {
   margin: 0;
   font-size: 22px;
 }
@@ -249,15 +260,28 @@ Not to escape the world. But to meet it with your soul intact.
 
 /* ── Draw button ─────────────────────────────────────────────────────────── */
 .result__draw-btn {
+  position: relative;
+  isolation: isolate;
   align-self: flex-start;
-  background: var(--midnight-blue);
+  background: transparent;
   color: var(--silver);
-  border: 1px solid var(--midnight-blue);
+  border: none;
   padding: 14px 40px;
   cursor: pointer;
   font-size: 11px;
   letter-spacing: 0.12em;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.result__draw-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--midnight-blue);
+  border-radius: 5px;
+  filter: url('#rough');
+  z-index: -1;
+  transition: background 0.2s ease;
 }
 
 .result__draw-btn:disabled {
@@ -266,8 +290,11 @@ Not to escape the world. But to meet it with your soul intact.
 }
 
 .result__draw-btn:not(:disabled):hover {
-  background: transparent;
   color: var(--midnight-blue);
+}
+
+.result__draw-btn:not(:disabled):hover::before {
+  background: var(--silver);
 }
 
 /* ── 3D card flip ─────────────────────────────────────────────────────────── */
@@ -368,6 +395,43 @@ Not to escape the world. But to meet it with your soul intact.
   object-fit: contain;
 }
 
+.result__signoff {
+  margin-top: 3rem;
+  opacity: 0.7;
+}
+
+/* ── Mobile layout ───────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .result__right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .result__pre-draw {
+    align-items: center;
+  }
+
+  .result__draw-btn {
+    width: min(72vw, 280px);
+    align-self: center;
+    padding: 14px 0;
+    text-align: center;
+  }
+
+  .result__cta-text {
+    text-align: center;
+  }
+
+  .result__card-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .result__card-label {
+    text-align: center;
+  }
+}
+
 /* ── Desktop layout ──────────────────────────────────────────────────────── */
 @media (min-width: 768px) {
   .result {
@@ -377,7 +441,7 @@ Not to escape the world. But to meet it with your soul intact.
 
   .result__body {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     gap: 3.5rem;
   }
 
@@ -390,5 +454,9 @@ Not to escape the world. But to meet it with your soul intact.
     flex-shrink: 0;
     flex-grow: 0;
   }
+
+  /* Desktop: show intro inside right column, hide the one above card */
+  .result__intro--desktop { display: block; }
+  .result__intro--mobile  { display: none; }
 }
 </style>

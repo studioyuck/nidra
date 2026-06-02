@@ -4,20 +4,20 @@
       <div class="copy-01_container">
         <div class="copy-01_text">
 
-          <p>The world of Nidra is coming soon.<br><br>
-Bringing with it objects and offerings to inspire rituals for a more beautiful relationship with your phone.<br><br>
-But first, it's time to really listen to how you feel.</p>
-
           <div class="home-intro">
             <h2 class="home-heading">Are you sleeping with your phone?</h2>
-            <p class="home-subtitle">A 3 minute survey on rituals and boundaries around our screens.</p>
+            <p class="home-subtitle">A 3 minute survey on rituals and<br>boundaries around our screens.</p>
           </div>
 
           <NuxtLink to="/survey" class="home-cta-btn">
             Start Survey
           </NuxtLink>
 
-          <p class="home-footer-line">Let the start and end be yours.</p>
+          <p>The world of Nidra is coming soon.<br><br>
+Bringing with it objects and offerings to inspire rituals for a more beautiful relationship with your phone.<br><br>
+But first, it's time to really listen to how you feel.</p>
+
+          <NidraSignoff />
 
         </div>
       </div>
@@ -27,24 +27,13 @@ But first, it's time to really listen to how you feel.</p>
 
 <script setup>
 definePageMeta({ headerTheme: 'dark', headerSolid: false })
+
+useHead({ bodyAttrs: { class: 'page--home' } })
 </script>
 
 <style scoped>
 .page-in {
-  position: relative;
-  overflow: hidden;
   color: var(--midnight-blue);
-}
-
-.page-in::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('/images/bg-day.jpg');
-  background-size: cover;
-  background-position: center;
-  transform: rotate(180deg);
-  z-index: -1;
 }
 
 .page-in :deep(p),
@@ -79,11 +68,6 @@ definePageMeta({ headerTheme: 'dark', headerSolid: false })
   opacity: 0.65;
 }
 
-.home-footer-line {
-  font-style: italic;
-  opacity: 0.5;
-  font-size: 18px;
-}
 
 .home-cta-btn {
   display: inline-block;

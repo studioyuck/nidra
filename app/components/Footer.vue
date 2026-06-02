@@ -55,6 +55,8 @@ const { timeOfDay } = useTimeOfDay()
 
 <style scoped>
 .footer {
+  position: relative;
+  z-index: 200;
   background-color: var(--night-shadow);
   color: var(--silver);
 }
