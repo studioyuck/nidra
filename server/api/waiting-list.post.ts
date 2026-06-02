@@ -1,5 +1,4 @@
-import { appendFileSync, existsSync } from 'fs'
-import { join } from 'path'
+const ENDPOINT = 'https://api.airtable.com/v0/appeumZ1Zl4tDSjSb/tbl6z11fTbwjYfSG7'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
@@ -9,22 +8,27 @@ export default defineEventHandler(async (event) => {
     event.node.req.socket.remoteAddress ||
     'unknown'
 
-  const csvPath = join(process.cwd(), 'waiting-list.csv')
-
-  if (!existsSync(csvPath)) {
-    appendFileSync(csvPath, 'timestamp,name,email,ip\n')
+  try {
+    await $fetch(ENDPOINT, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.AIRTABLE_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: {
+        records: [{
+          fields: {
+            timestamp: new Date().toISOString(),
+            name:      String(body.name ?? ''),
+            email:     String(body.email ?? ''),
+            ip:        String(ip),
+          },
+        }],
+      },
+    })
+  } catch {
+    // fail silently
   }
-
-  const escape = (v: string) => `"${(v ?? '').replace(/"/g, '""')}"`
-
-  const row = [
-    new Date().toISOString(),
-    escape(body.name),
-    escape(body.email),
-    ip,
-  ].join(',') + '\n'
-
-  appendFileSync(csvPath, row)
 
   return { success: true }
 })
