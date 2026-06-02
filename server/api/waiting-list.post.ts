@@ -18,10 +18,10 @@ export default defineEventHandler(async (event) => {
       body: {
         records: [{
           fields: {
-            timestamp: new Date().toISOString(),
-            name:      String(body.name ?? ''),
-            email:     String(body.email ?? ''),
-            ip:        String(ip),
+            Timestamp:    new Date().toISOString(),
+            Name:         String(body.name ?? ''),
+            Email:        String(body.email ?? ''),
+            'IP Address': String(ip),
           },
         }],
       },
