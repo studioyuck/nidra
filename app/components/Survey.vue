@@ -42,13 +42,6 @@
         >
           Continue
         </button>
-        <button
-          v-if="currentQuestion.optional && currentQuestion.input_type === 'single_choice'"
-          class="q__answers-button q__answers-button--skip"
-          @click="skipQuestion('night')"
-        >
-          Skip
-        </button>
       </div>
 
       <!-- Day Intro -->
