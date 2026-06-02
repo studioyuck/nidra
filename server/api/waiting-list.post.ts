@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
     'unknown'
 
   try {
-    await $fetch(ENDPOINT, {
+    const result = await $fetch(ENDPOINT, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${process.env.AIRTABLE_TOKEN}`,
@@ -26,9 +26,8 @@ export default defineEventHandler(async (event) => {
         }],
       },
     })
-  } catch {
-    // fail silently
+    return { success: true, airtable: result }
+  } catch (err: any) {
+    return { success: false, error: err?.message, detail: err?.data }
   }
-
-  return { success: true }
 })
