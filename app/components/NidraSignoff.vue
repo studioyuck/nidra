@@ -35,29 +35,30 @@ onMounted(async () => {
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
+  padding-top: 2rem;
 }
 
 .nidra-signoff__tagline :deep(svg) {
   display: block;
-  width: 320px;
+  width: 260px;
   height: auto;
   fill: currentColor;
 }
 
 .nidra-signoff__pratika :deep(svg) {
   display: block;
-  width: 72px;
+  width: 60px;
   height: auto;
   fill: currentColor;
 }
 
 @media (max-width: 767px) {
   .nidra-signoff__tagline :deep(svg) {
-    width: 200px;
+    width: 170px;
   }
 
   .nidra-signoff__pratika :deep(svg) {
-    width: 48px;
+    width: 40px;
   }
 }
 </style>

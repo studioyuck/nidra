@@ -50,7 +50,7 @@ useHead({ bodyAttrs: { class: 'page--home' } })
   font-family: Cloister, Georgia, serif;
   font-weight: 400;
   font-style: italic;
-  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-size: clamp(2.2rem, 5vw, 3.75rem);
   line-height: 1;
   margin: 0;
   color: var(--midnight-blue);
