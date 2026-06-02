@@ -1,20 +1,20 @@
 const ENDPOINT = 'https://api.airtable.com/v0/appeumZ1Zl4tDSjSb/tbl72iIvbZ9bXpQ4x'
 
-// Column name → answer key in the submitted answers object
+// Airtable field name → answer key in the submitted answers object
 const ANSWER_KEYS: Record<string, string> = {
-  night_phone_away:     'q1',
-  night_phone_bedtime:  'q2',
-  night_phone_location: 'q3',
-  night_bedtime_ritual: 'q4',
-  day_first_touch:      'q5',
-  day_phone_morning:    'q6',
-  day_morning_ritual:   'q7',
-  day_mood_effect:      'q8',
-  ritual_relationship:  'q9',
-  ritual_distractions:  'q10',
-  ritual_ten_minutes:   'q12',
-  contact_name:         'contact_name',
-  contact_email:        'contact_email',
+  'Night: Phone Away Frequency':    'q1',
+  'Night: Phone Bedtime Timing':    'q2',
+  'Night: Phone Location':          'q3',
+  'Night: Bedtime Ritual Frequency':'q4',
+  'Day: First Touch':               'q5',
+  'Day: Phone Morning Timing':      'q6',
+  'Day: Morning Ritual Frequency':  'q7',
+  'Day: Mood Effect':               'q8',
+  'Ritual Relationship Impact':     'q9',
+  'Ritual Distractions':            'q10',
+  'Ritual Ten Minutes':             'q12',
+  'Contact Name':                   'contact_name',
+  'Contact Email':                  'contact_email',
 }
 
 export default defineEventHandler(async (event) => {
@@ -27,11 +27,11 @@ export default defineEventHandler(async (event) => {
 
   const a = body.answers ?? {}
 
-  const fields: Record<string, string> = {
-    id:        String(body.id ?? ''),
-    timestamp: String(body.timestamp ?? ''),
-    ip:        String(ip),
-    completed: body.completed ? 'true' : 'false',
+  const fields: Record<string, unknown> = {
+    'ID':         String(body.id ?? ''),
+    'Timestamp':  String(body.timestamp ?? ''),
+    'IP Address': String(ip),
+    'Completed':  body.completed === true,
   }
 
   for (const [col, qid] of Object.entries(ANSWER_KEYS)) {
@@ -39,7 +39,7 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    await $fetch(ENDPOINT, {
+    const result = await $fetch(ENDPOINT, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${process.env.AIRTABLE_TOKEN}`,
@@ -47,12 +47,11 @@ export default defineEventHandler(async (event) => {
       },
       body: {
         records: [{ fields }],
-        performUpsert: { fieldsToMergeOn: ['id'] },
+        performUpsert: { fieldsToMergeOn: ['ID'] },
       },
     })
-  } catch {
-    // fail silently — don't interrupt the user experience
+    return { success: true, airtable: result }
+  } catch (err: any) {
+    return { success: false, error: err?.message, detail: err?.data }
   }
-
-  return { success: true }
 })
