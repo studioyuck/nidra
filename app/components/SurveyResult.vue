@@ -34,7 +34,7 @@ function onAnimationEnd() {
     <!-- Intro text: sits above card on mobile, hidden on desktop (shown inside right col) -->
     <div class="result__intro result__intro--mobile" :class="{ 'is-hidden': hasDrawn }">
       <p>Your relationship with your phone isn't a problem to be measured — it's a life to be lived, beautifully.<br><br>
-      As a gift, our first Nidra offering to you:</p>
+      Please take as a gift, our first Nidra offering!</p>
     </div>
 
     <div class="result__body">
@@ -89,7 +89,7 @@ function onAnimationEnd() {
             <!-- Intro text: desktop only (mobile version sits above card) -->
             <p class="result__intro result__intro--desktop">
               Your relationship with your phone isn't a problem to be measured — it's a life to be lived, beautifully.<br><br>
-              As a gift, our first Nidra offering to you:
+              Please take as a gift, our first Nidra offering!
             </p>
 
             <button
@@ -102,8 +102,7 @@ function onAnimationEnd() {
 
             <p class="result__cta-text">
               Ritual brings us back to our senses, one small act at a time.<br><br>
-              Is it time to altar your habits?<br><br>
-              Not to escape the world. But to meet it with your soul intact.
+              Is it time to altar your habits?
             </p>
 
           </div>

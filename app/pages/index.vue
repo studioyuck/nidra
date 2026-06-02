@@ -14,8 +14,7 @@
           </NuxtLink>
 
           <p>The world of Nidra is coming soon.<br><br>
-Bringing with it objects and offerings to inspire rituals for a more beautiful relationship with your phone.<br><br>
-But first, it's time to really listen to how you feel.</p>
+Objects and offerings to inspire rituals for a more beautiful relationship with your phone.</p>
 
           <NidraSignoff />
 
