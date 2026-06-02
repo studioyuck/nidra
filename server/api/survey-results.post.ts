@@ -47,7 +47,6 @@ export default defineEventHandler(async (event) => {
       },
       body: {
         records: [{ fields }],
-        performUpsert: { fieldsToMergeOn: ['ID'] },
       },
     })
     return { success: true, airtable: result }
