@@ -7,12 +7,14 @@
         "id": "q1",
         "question": "Do you consciously step away from your phone before going to bed?",
         "input_type": "single_choice",
+        "optional": true,
         "options": [{ "label": "Yes" }, { "label": "No" }, { "label": "Sometimes" }]
       },
       {
         "id": "q2",
         "question": "How soon before sleep do you usually put your phone to bed?",
         "input_type": "single_choice",
+        "optional": true,
         "options": [
           { "label": "More than an hour before" },
           { "label": "30–60 minutes before" },
@@ -24,6 +26,7 @@
         "id": "q3",
         "question": "Where does your phone usually sleep at night?",
         "input_type": "single_choice",
+        "optional": true,
         "options": [
           { "label": "I have a special designated place away from my bed" },
           { "label": "In another room" },
@@ -35,6 +38,7 @@
         "id": "q4",
         "question": "Do you follow a ritual away from screens such as reading, meditation, that helps you drift off?",
         "input_type": "single_choice",
+        "optional": true,
         "options": [
           { "label": "Yes, every night" },
           { "label": "Sometimes" },
@@ -52,6 +56,7 @@
         "id": "q5",
         "question": "What’s the first thing you touch in the morning?",
         "input_type": "single_choice",
+        "optional": true,
         "options": [
           { "label": "A loved one" },
           { "label": "Myself" },
@@ -63,6 +68,7 @@
         "id": "q6",
         "question": "How soon after waking do you let the outside world in through your phone?",
         "input_type": "single_choice",
+        "optional": true,
         "options": [
           { "label": "Almost straight away" },
           { "label": "After 10 minutes" },
@@ -74,6 +80,7 @@
         "id": "q7",
         "question": "Do you start the day with a ritual—however small—before reaching for your phone?",
         "input_type": "single_choice",
+        "optional": true,
         "options": [
           { "label": "Yes, it anchors me" },
           { "label": "Sometimes—I try" },
@@ -85,6 +92,7 @@
         "id": "q8",
         "question": "Does what you take in first thing through screens affect your mood?",
         "input_type": "single_choice",
+        "optional": true,
         "options": [{ "label": "Yes" }, { "label": "No" }, { "label": "Sometimes" }]
       }
     ]
@@ -97,6 +105,7 @@
         "id": "q9",
         "question": "In your closest relationships, do you feel that phones impact the time you spend together?",
         "input_type": "single_choice",
+        "optional": true,
         "options": [
           { "label": "Not at all" },
           { "label": "Not often" },
@@ -108,23 +117,24 @@
         "id": "q10",
         "question": "Are your phone habits taking more than they give?",
         "input_type": "single_choice",
+        "optional": true,
         "options": [
-          { "label": "Yes — far more than I'd like to admit" },
-          { "label": "Sometimes — it ebbs and flows" },
-          { "label": "Not yet — but I'm paying attention" }
+          { "label": "Yes, far more than I'd like to admit" },
+          { "label": "Sometimes, it ebbs and flows" },
+          { "label": "Not yet, but I'm paying attention" }
         ]
       },
       {
         "id": "q12",
         "question": "If you had ten more minutes away from your phone each day, what might you give that time to?",
-        "input_type": "text"
+        "input_type": "text",
+        "optional": true
       },
       {
         "id": "q_contact",
         "question": "The world of Nidra is coming soon.",
         "description": "Objects and offerings to inspire rituals for a more beautiful relationship with your phone.",
-        "input_type": "contact",
-        "optional": true
+        "input_type": "contact"
       }
     ]
   }
