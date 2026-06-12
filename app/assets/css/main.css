@@ -4704,6 +4704,7 @@ font-size: var(--font-lg);
 
   .page--survey {
     min-height: 120svh;
+    padding-bottom: 20svh;
   }
 }
 
