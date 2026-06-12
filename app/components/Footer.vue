@@ -114,7 +114,7 @@ const { timeOfDay } = useTimeOfDay()
 
 @media (max-width: 767px) {
   .footer-inner {
-    padding: 56px var(--outer-padding) 0;
+    padding: 80px var(--outer-padding) 80px;
   }
 
   .footer-top {
