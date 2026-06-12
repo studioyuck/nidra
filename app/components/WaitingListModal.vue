@@ -99,7 +99,7 @@ async function submit() {
   color: var(--silver);
   width: 100%;
   max-width: 440px;
-  padding: 48px 40px 40px;
+  padding: 32px;
   position: relative;
 }
 
