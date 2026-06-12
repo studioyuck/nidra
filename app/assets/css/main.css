@@ -31,8 +31,8 @@
 @media (max-width: 767px) {
   :root {
     --font-sm: 12px;
-    --font-md: 18px;
-    --font-lg: 26px;
+    --font-md: 16px;
+    --font-lg: 23px;
     --font-xl: 36px;
   }
 }
