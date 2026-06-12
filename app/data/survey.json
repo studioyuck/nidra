@@ -83,9 +83,9 @@
         "optional": true,
         "options": [
           { "label": "Yes, it anchors me" },
-          { "label": "Sometimes—I try" },
-          { "label": "Rarely—habit takes over" },
-          { "label": "No—my phone is the start" }
+          { "label": "Sometimes, I try" },
+          { "label": "Rarely, habit takes over" },
+          { "label": "No, my phone is the start" }
         ]
       },
       {

@@ -1,23 +1,19 @@
 <template>
   <div class="page-in page--nav-padding">
-    <section class="section section--border section--padding-large">
-      <div class="copy-01_container">
-        <div class="copy-01_text">
+    <div class="home-content">
 
-          <div class="home-intro">
-            <h2 class="home-heading">Are you sleeping with your phone?</h2>
-            <p class="home-subtitle">A 3 minute survey on rituals and<br>boundaries around our screens.</p>
-          </div>
-
-          <NuxtLink to="/survey" class="home-cta-btn">
-            Start Survey
-          </NuxtLink>
-
-          <NidraSignoff />
-
-        </div>
+      <div class="home-intro">
+        <h2 class="home-heading">Are you sleeping with your phone?</h2>
+        <p class="home-subtitle">A 3 minute survey on rituals and<br>boundaries around our screens.</p>
       </div>
-    </section>
+
+      <NuxtLink to="/survey" class="home-cta-btn">
+        Start Survey
+      </NuxtLink>
+
+      <NidraSignoff />
+
+    </div>
   </div>
 </template>
 
@@ -29,6 +25,11 @@ useHead({ bodyAttrs: { class: 'page--home' } })
 
 <style scoped>
 .page-in {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: var(--midnight-blue);
 }
 
@@ -37,6 +38,23 @@ useHead({ bodyAttrs: { class: 'page--home' } })
 .page-in :deep(h2),
 .page-in :deep(h3) {
   color: var(--midnight-blue);
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  text-align: center;
+  max-width: 460px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .home-content {
+    max-width: 620px;
+  }
 }
 
 .home-intro {
