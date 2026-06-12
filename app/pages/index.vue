@@ -63,6 +63,7 @@ useHead({ bodyAttrs: { class: 'page--home' } })
 
 @media screen and (max-width: 767px) {
   .page-in {
+    min-height: calc(100svh + 160px);
     padding-bottom: 160px;
   }
 }
