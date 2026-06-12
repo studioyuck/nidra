@@ -98,7 +98,6 @@ useHead({ bodyAttrs: { class: 'page--home' } })
   font-size: var(--font-md);
   font-weight: 400;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   text-decoration: none;
   border-radius: 5px;
   transition: color 0.2s ease;
