@@ -13,14 +13,6 @@
     <!-- <FloatingSymbols /> -->
     <Header />
     <div class="app-shell__content">
-      <Transition name="survey-bg">
-        <div
-          v-if="bgImage"
-          :key="bgKey"
-          class="app-bg"
-          :style="{ backgroundImage: `url('${bgImage}')`, transform: bgTransform || undefined }"
-        />
-      </Transition>
       <NuxtPage :transition="pageTransition" />
     </div>
     <Footer />
@@ -41,8 +33,6 @@ const pageTransition = computed(() =>
     ? { name: 'survey-exit', duration: 250 }
     : { name: 'page' }
 )
-
-const { bgImage, bgKey, bgTransform } = usePageBackground()
 </script>
 
 <style>
@@ -57,15 +47,6 @@ const { bgImage, bgKey, bgTransform } = usePageBackground()
   display: flex;
   flex-direction: column;
   position: relative;
-}
-
-.app-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-  pointer-events: none;
 }
 
 @media (max-width: 767px) {

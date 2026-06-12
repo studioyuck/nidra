@@ -21,11 +21,6 @@
 definePageMeta({ headerTheme: 'dark', headerSolid: false })
 
 useHead({ bodyAttrs: { class: 'page--home' } })
-
-const { setBackground, clearBackground } = usePageBackground()
-
-onMounted(() => setBackground('/images/bg-day.jpg', 'home', 'rotate(180deg)'))
-onUnmounted(() => clearBackground())
 </script>
 
 <style scoped>
@@ -39,7 +34,6 @@ onUnmounted(() => clearBackground())
   position: relative;
   z-index: 1;
 }
-
 
 .page-in :deep(p),
 .page-in :deep(h1),
