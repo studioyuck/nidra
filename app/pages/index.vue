@@ -61,6 +61,12 @@ useHead({ bodyAttrs: { class: 'page--home' } })
   }
 }
 
+@media screen and (max-width: 767px) {
+  .page-in {
+    padding-bottom: 160px;
+  }
+}
+
 .home-intro {
   display: flex;
   flex-direction: column;
