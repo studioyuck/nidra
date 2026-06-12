@@ -49,9 +49,4 @@ const pageTransition = computed(() =>
   position: relative;
 }
 
-@media (max-width: 767px) {
-  .app-shell__content {
-    padding-bottom: 160px;
-  }
-}
 </style>

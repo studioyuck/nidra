@@ -4703,7 +4703,7 @@ font-size: var(--font-lg);
   }
 
   .page--survey {
-    min-height: calc(100svh + 160px);
+    min-height: 120svh;
   }
 }
 
