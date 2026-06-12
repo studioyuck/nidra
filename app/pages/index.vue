@@ -31,6 +31,8 @@ useHead({ bodyAttrs: { class: 'page--home' } })
   align-items: center;
   justify-content: center;
   color: var(--midnight-blue);
+  position: relative;
+  z-index: 1;
 }
 
 .page-in :deep(p),

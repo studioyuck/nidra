@@ -101,15 +101,19 @@
 }
 
 /* ── Home page full-viewport background ─────────────────────────────────── */
-body.page--home::before {
+body.page--home .app-shell__content {
+  position: relative;
+}
+
+body.page--home .app-shell__content::before {
   content: '';
-  position: fixed;
-  inset: -15% 0;
+  position: absolute;
+  inset: 0;
   background-image: url('/images/bg-day.jpg');
   background-size: cover;
   background-position: top center;
   transform: rotate(180deg);
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -4696,6 +4700,10 @@ font-size: var(--font-lg);
     right: auto;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .page--survey {
+    min-height: calc(100svh + 160px);
   }
 }
 
