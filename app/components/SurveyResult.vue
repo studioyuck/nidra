@@ -171,7 +171,7 @@ function onAnimationEnd() {
   font-family: Cloister, Georgia, serif;
   font-weight: 400;
   font-style: italic;
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: var(--font-lg);
   margin: 0;
   text-align: center;
   width: 100%;
@@ -233,7 +233,7 @@ function onAnimationEnd() {
 /* ── Intro text visibility ───────────────────────────────────────────────── */
 .result__intro {
   margin: 0;
-  font-size: 22px;
+  font-size: var(--font-md);
 }
 
 /* Mobile: shown above card (natural DOM position), hidden inside right col */
@@ -249,7 +249,7 @@ function onAnimationEnd() {
 
 .result__cta-text {
   margin: 0;
-  font-size: 22px;
+  font-size: var(--font-md);
 }
 
 /* ── Post-draw content ───────────────────────────────────────────────────── */
@@ -272,7 +272,7 @@ function onAnimationEnd() {
 
 .result__card-body {
   margin: 0;
-  font-size: 22px;
+  font-size: var(--font-md);
 }
 
 .result__divider {
@@ -290,7 +290,7 @@ function onAnimationEnd() {
   border: none;
   padding: 14px 40px;
   cursor: pointer;
-  font-size: 11px;
+  font-size: var(--font-sm);
   letter-spacing: 0.12em;
   transition: color 0.2s ease;
 }
@@ -404,7 +404,7 @@ function onAnimationEnd() {
 
 .card-word {
   margin: 0;
-  font-size: clamp(2.25rem, 3vw, 3.5rem);
+  font-size: var(--font-lg);
   line-height: 0.9;
   font-style: italic;
   font-weight: normal;

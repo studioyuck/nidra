@@ -3,7 +3,7 @@
     <div class="home-content">
 
       <div class="home-intro">
-        <h2 class="home-heading">Are you sleeping with your phone?</h2>
+        <h2 class="home-heading">Are you sleeping with<br>your phone?</h2>
         <p class="home-subtitle">A 3 minute survey on rituals and<br>boundaries around our screens.</p>
       </div>
 
@@ -51,6 +51,10 @@ useHead({ bodyAttrs: { class: 'page--home' } })
   padding: 0 20px;
 }
 
+.home-content :deep(.nidra-signoff) {
+  padding-top: 0;
+}
+
 @media screen and (min-width: 768px) {
   .home-content {
     max-width: 620px;
@@ -61,15 +65,15 @@ useHead({ bodyAttrs: { class: 'page--home' } })
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.5rem;
 }
 
 .home-heading {
   font-family: Cloister, Georgia, serif;
   font-weight: 400;
   font-style: italic;
-  font-size: clamp(2.2rem, 5vw, 3.75rem);
-  line-height: 1;
+  font-size: var(--font-xl);
+  line-height: 0.8;
   margin: 0;
   color: var(--midnight-blue);
 }
@@ -77,7 +81,7 @@ useHead({ bodyAttrs: { class: 'page--home' } })
 .home-subtitle {
   margin: 0;
   font-family: Cloister, Georgia, serif;
-  font-size: 22px;
+  font-size: var(--font-md);
   color: var(--midnight-blue);
   opacity: 0.65;
 }
@@ -87,11 +91,11 @@ useHead({ bodyAttrs: { class: 'page--home' } })
   display: inline-block;
   position: relative;
   isolation: isolate;
-  padding: 14px 36px;
+  padding: 20px 52px;
   border: none;
   background: transparent;
   color: var(--beige);
-  font-size: 12px;
+  font-size: var(--font-md);
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;

@@ -70,7 +70,7 @@ function toggle(i) {
 }
 
 .faq-item__question {
-  font-size: 11px;
+  font-size: var(--font-sm);
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -84,7 +84,7 @@ function toggle(i) {
 }
 
 .faq-item__icon {
-  font-size: 22px;
+  font-size: var(--font-md);
   font-style: normal;
   flex-shrink: 0;
   opacity: 0.4;
@@ -97,7 +97,7 @@ function toggle(i) {
 
 .faq-item__answer p {
   margin: 0;
-  font-size: 18px;
+  font-size: var(--font-md);
   line-height: normal;
   opacity: 0.65;
 }

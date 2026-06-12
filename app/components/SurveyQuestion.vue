@@ -111,8 +111,8 @@ function isSelected(option) {
   border: none;
   border-bottom: 1px solid rgba(172, 173, 184, 0.3);
   padding: 10px 0;
-  font-family: Bdogrotesk Vf, Arial, sans-serif;
-  font-size: 17px;
+  font-family: inherit;
+  font-size: var(--font-md);
   color: var(--primary);
   outline: none;
   transition: border-color 0.2s ease;

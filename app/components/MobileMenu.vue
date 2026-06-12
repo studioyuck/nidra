@@ -97,7 +97,7 @@ const emit = defineEmits(['close'])
 }
 
 .mobile-menu__text {
-  font-size: 46px;
+  font-size: var(--font-lg);
   line-height: 1em;
 }
 
@@ -108,10 +108,9 @@ const emit = defineEmits(['close'])
   letter-spacing: -.005em;
   text-transform: uppercase;
   margin: 0;
-  font-family: Bdogrotesk Vf, Arial, sans-serif;
-  font-size: 12px;
+  font-family: inherit;
+  font-size: var(--font-sm);
   font-weight: 400;
-  line-height: 120%;
 }
 
 @media screen and (max-width: 767px) {

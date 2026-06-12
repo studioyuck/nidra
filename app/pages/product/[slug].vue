@@ -266,14 +266,14 @@ const specsOpen = ref(false)
   font-family: Cloister, Georgia, serif;
   font-weight: 400;
   font-style: italic;
-  font-size: clamp(32px, 3.5vw, 48px);
+  font-size: var(--font-lg);
   line-height: 1.1;
   margin: 0 0 10px;
 }
 
 .product-info__tagline {
-  font-family: Bdogrotesk Vf, Arial, sans-serif;
-  font-size: 14px;
+  font-family: inherit;
+  font-size: var(--font-sm);
   color: var(--b400);
   margin: 0;
   line-height: 1.5;
@@ -291,7 +291,7 @@ const specsOpen = ref(false)
 }
 
 .product-info__price {
-  font-size: 1.5em;
+  font-size: var(--font-lg);
   font-weight: 500;
   color: var(--midnight-blue);
 }
@@ -333,13 +333,13 @@ const specsOpen = ref(false)
   align-items: center;
   padding: 0;
   color: var(--midnight-blue);
-  font-size: 11px;
+  font-size: var(--font-sm);
   letter-spacing: 0.08em;
   margin-bottom: 0;
 }
 
 .product-info__accordion-icon {
-  font-size: 16px;
+  font-size: var(--font-md);
   line-height: 1;
 }
 
@@ -353,8 +353,8 @@ const specsOpen = ref(false)
 }
 
 .product-info__details-list li {
-  font-family: Bdogrotesk Vf, Arial, sans-serif;
-  font-size: 13px;
+  font-family: inherit;
+  font-size: var(--font-sm);
   line-height: 1.5;
   padding-left: 14px;
   position: relative;
@@ -365,7 +365,7 @@ const specsOpen = ref(false)
   position: absolute;
   left: 0;
   color: var(--b300);
-  font-size: 10px;
+  font-size: var(--font-sm);
   top: 2px;
 }
 
@@ -379,7 +379,7 @@ const specsOpen = ref(false)
 .product-info__spec-value {
   padding: 8px 0;
   border-bottom: 1px solid var(--gold-10);
-  font-size: 12px;
+  font-size: var(--font-sm);
   vertical-align: top;
 }
 
@@ -390,7 +390,7 @@ const specsOpen = ref(false)
 }
 
 .product-info__spec-value {
-  font-family: Bdogrotesk Vf, Arial, sans-serif;
+  font-family: inherit;
   color: var(--midnight-blue);
 }
 
@@ -402,7 +402,7 @@ const specsOpen = ref(false)
   border: 1px solid var(--midnight-blue);
   padding: 18px 24px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: var(--font-sm);
   letter-spacing: 0.1em;
   transition: background 0.2s ease, color 0.2s ease;
   margin-top: 8px;

@@ -16,7 +16,6 @@
       <NuxtPage :transition="pageTransition" />
     </div>
     <Footer />
-    <WaitingListButton />
     <WaitingListModal />
   </div>
 </template>

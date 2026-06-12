@@ -87,7 +87,7 @@ definePageMeta({ headerTheme: 'dark' })
 
 .sr-block__body {
   margin: 0;
-  font-size: 18px;
+  font-size: var(--font-md);
   line-height: normal;
 }
 

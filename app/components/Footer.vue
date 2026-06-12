@@ -49,6 +49,8 @@ const { timeOfDay } = useTimeOfDay()
         </div>
       </div>
 
+      <WaitingListButton />
+
     </div>
   </div>
 </template>
@@ -128,7 +130,7 @@ const { timeOfDay } = useTimeOfDay()
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-    padding-bottom: 100px;
+    padding-bottom: 32px;
   }
 }
 </style>

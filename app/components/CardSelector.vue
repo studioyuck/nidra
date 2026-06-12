@@ -165,7 +165,7 @@ const delays = [
 
 .card-word {
   margin: 0;
-  font-size: clamp(2.25rem, 3vw, 3.5rem);
+  font-size: var(--font-lg);
   line-height: 0.9;
   font-style: italic;
   font-weight: normal;
@@ -187,7 +187,7 @@ const delays = [
   border-radius: 999px;
   cursor: pointer;
 
-  font-size: 0.85rem;
+  font-size: var(--font-sm);
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -218,7 +218,7 @@ const delays = [
 
 .text-label {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: var(--font-sm);
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;

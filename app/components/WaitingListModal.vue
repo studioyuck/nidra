@@ -48,7 +48,7 @@ async function submit() {
           <Transition name="swap" mode="out-in">
             <div v-if="!submitted" key="form">
               <div class="modal__header">
-                <h2 class="modal__title">Join the Waiting List</h2>
+                <h2 class="modal__title">Join the waiting list</h2>
                 <p class="modal__subtitle">Be the first to put your phone to bed. 
 </p>
               </div>
@@ -111,7 +111,7 @@ async function submit() {
   border: none;
   cursor: pointer;
   color: var(--silver);
-  font-size: 12px;
+  font-size: var(--font-sm);
   letter-spacing: 0.05em;
   padding: 4px 8px;
   opacity: 0.5;
@@ -129,15 +129,15 @@ async function submit() {
 .modal__title {
   font-family: Cloister, Georgia, serif;
   font-weight: 400;
-  font-size: 28px;
+  font-size: var(--font-lg);
   line-height: 1.2;
   margin: 0 0 8px;
   color: var(--silver);
 }
 
 .modal__subtitle {
-  font-family: Bdogrotesk Vf, Arial, sans-serif;
-  font-size: 14px;
+  font-family: inherit;
+  font-size: var(--font-md);
   color: var(--silver);
   opacity: 0.55;
   margin: 0;
@@ -156,7 +156,7 @@ async function submit() {
 }
 
 .modal__field label {
-  font-size: 11px;
+  font-size: var(--font-sm);
   letter-spacing: 0.08em;
   color: var(--silver);
   opacity: 0.55;
@@ -167,8 +167,8 @@ async function submit() {
   border: none;
   border-bottom: 1px solid rgba(172, 173, 184, 0.25);
   padding: 8px 0;
-  font-family: Bdogrotesk Vf, Arial, sans-serif;
-  font-size: 15px;
+  font-family: inherit;
+  font-size: var(--font-md);
   color: var(--silver);
   outline: none;
   transition: border-color 0.2s ease;
@@ -190,7 +190,7 @@ async function submit() {
   border: none;
   padding: 14px 24px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: var(--font-sm);
   letter-spacing: 0.08em;
   transition: background 0.2s ease, color 0.2s ease;
   border-radius: 5px;

@@ -7,11 +7,13 @@
       { 'header--no-border': route.meta.headerSolid && !isScrolled }
     ]"
   >
-    <MobileMenu
-      :is-open="isMenuOpen"
-      :links="allLinks"
-      @close="isMenuOpen = false"
-    />
+    <Teleport to="body">
+      <MobileMenu
+        :is-open="isMenuOpen"
+        :links="allLinks"
+        @close="isMenuOpen = false"
+      />
+    </Teleport>
 
     <div class="header-container">
       <!-- Hamburger — mobile only (hidden on desktop via .mobile-menu-wrap CSS) -->

@@ -54,11 +54,11 @@ onMounted(async () => {
 
 @media (max-width: 767px) {
   .nidra-signoff__tagline :deep(svg) {
-    width: 170px;
+    width: 260px;
   }
 
   .nidra-signoff__pratika :deep(svg) {
-    width: 40px;
+    width: 60px;
   }
 }
 </style>

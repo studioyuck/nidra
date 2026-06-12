@@ -56,7 +56,7 @@ function submit() {
 
 .contact-field__input {
   font-family: inherit;
-  font-size: 18px;
+  font-size: var(--font-md);
   line-height: normal;
   color: var(--midnight-blue);
   background: transparent;
@@ -89,7 +89,7 @@ function submit() {
   padding: 14px 40px;
   cursor: pointer;
   letter-spacing: 0.12em;
-  font-size: 11px;
+  font-size: var(--font-sm);
   transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -99,7 +99,7 @@ function submit() {
 }
 
 .contact-thanks__title {
-  font-size: 2rem;
+  font-size: var(--font-lg);
   font-style: italic;
   margin: 0;
   line-height: normal;
@@ -107,7 +107,7 @@ function submit() {
 }
 
 .contact-thanks__body {
-  font-size: 18px;
+  font-size: var(--font-md);
   line-height: normal;
   opacity: 0.65;
   margin: 0;

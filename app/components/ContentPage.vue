@@ -28,7 +28,7 @@ defineProps({
 
 .cp__title {
   font-family: Cloister, Times New Roman, serif;
-  font-size: clamp(1.4rem, 3.5vw, 2.75rem);
+  font-size: var(--font-lg);
   font-weight: 400;
   font-style: italic;
   line-height: normal;
@@ -37,7 +37,7 @@ defineProps({
 
 @media (max-width: 767px) {
   .cp__title {
-    font-size: 2.8rem;
+    font-size: var(--font-xl);
   }
 
   .cp__header {

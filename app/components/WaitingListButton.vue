@@ -16,23 +16,22 @@ const surveyActive = useState('surveyActive', () => false)
 
 <style scoped>
 .wl-button {
-  position: fixed;
-  bottom: var(--outer-padding);
-  left: var(--outer-padding);
-  z-index: 9000;
+  position: relative;
   isolation: isolate;
   display: flex;
+  width: fit-content;
   align-items: center;
   gap: 10px;
   background: transparent;
   color: var(--silver);
   padding: 2px 15px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: var(--font-sm);
   letter-spacing: 0.08em;
   transition: color 0.2s ease, transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
   border-radius: 5px;
+  margin: var(--outer-padding) 0 var(--outer-padding) 0;
 }
 
 .wl-button::before {
@@ -47,7 +46,22 @@ const surveyActive = useState('surveyActive', () => false)
 }
 
 .wl-button--hidden {
-  transform: translateY(calc(100% + var(--outer-padding) + 4px));
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .wl-button {
+    position: fixed;
+    bottom: var(--outer-padding);
+    left: var(--outer-padding);
+    z-index: 9000;
+    margin: 0;
+  }
+
+  .wl-button--hidden {
+    display: flex;
+    transform: translateY(calc(100% + var(--outer-padding) + 4px));
+  }
 }
 
 .wl-button:hover {
@@ -65,4 +79,5 @@ const surveyActive = useState('surveyActive', () => false)
   display: block;
   flex-shrink: 0;
 }
+
 </style>
