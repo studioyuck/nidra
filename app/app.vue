@@ -48,4 +48,10 @@ const pageTransition = computed(() =>
   flex-direction: column;
   position: relative;
 }
+
+@media (max-width: 767px) {
+  .app-shell__content {
+    padding-bottom: 160px;
+  }
+}
 </style>
