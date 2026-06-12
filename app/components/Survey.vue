@@ -24,7 +24,7 @@
         class="survey__question"
       >
         <div class="heading q__header">
-          {{ currentQuestion.question }}
+          {{ currentQuestion.question }}<template v-if="currentQuestion.question_sub"><br><br>{{ currentQuestion.question_sub }}</template>
         </div>
         <p v-if="currentQuestion.description" class="q__description">
           {{ currentQuestion.description }}
@@ -59,7 +59,7 @@
         class="survey__question"
       >
         <div class="heading q__header">
-          {{ currentQuestion.question }}
+          {{ currentQuestion.question }}<template v-if="currentQuestion.question_sub"><br><br>{{ currentQuestion.question_sub }}</template>
         </div>
         <p v-if="currentQuestion.description" class="q__description">
           {{ currentQuestion.description }}
@@ -76,13 +76,6 @@
           @click="submitAnswer('day')"
         >
           Continue
-        </button>
-        <button
-          v-if="currentQuestion.optional && currentQuestion.input_type === 'single_choice'"
-          class="q__answers-button q__answers-button--skip"
-          @click="skipQuestion('day')"
-        >
-          Skip
         </button>
       </div>
 
@@ -101,7 +94,7 @@
         class="survey__question"
       >
         <div class="heading q__header">
-          {{ currentQuestion.question }}
+          {{ currentQuestion.question }}<template v-if="currentQuestion.question_sub"><br><br>{{ currentQuestion.question_sub }}</template>
         </div>
         <p v-if="currentQuestion.description" class="q__description">
           {{ currentQuestion.description }}
@@ -117,15 +110,11 @@
           class="q__answers-button q__answers-button--continue"
           @click="submitAnswer('ritual')"
         >
-          Continue
+          {{ currentQuestion.button_label || 'Continue' }}
         </button>
-        <button
-          v-if="currentQuestion.optional && currentQuestion.input_type === 'single_choice'"
-          class="q__answers-button q__answers-button--skip"
-          @click="skipQuestion('ritual')"
-        >
-          Skip
-        </button>
+        <p v-if="currentQuestion.footer_text" class="q__footer-text">
+          {{ currentQuestion.footer_text }}
+        </p>
       </div>
 
       <!-- Results -->
@@ -345,11 +334,6 @@ function submitAnswer(section) {
     state.value = 'results'
     saveSurveyResults()
   }
-}
-
-function skipQuestion(section) {
-  lastAnswer.value = null
-  submitAnswer(section)
 }
 
 async function saveSurveyResults() {

@@ -3,6 +3,22 @@ import cardGroups from '~/data/cards.json'
 
 defineProps({ results: Object })
 
+const pratikaSvg = ref('')
+
+function makeCurrentColor(svg) {
+  return svg
+    .replace(/fill="(?!none")[^"]+"/g, 'fill="currentColor"')
+    .replace(/fill:\s*#[0-9a-fA-F]{3,6}/g, 'fill:currentColor')
+}
+
+onMounted(async () => {
+  try {
+    pratikaSvg.value = makeCurrentColor(
+      await fetch('/images/Pratika-light.svg').then(r => r.text())
+    )
+  } catch {}
+})
+
 const { isDay } = useTimeOfDay()
 
 const availableCards = computed(() => isDay.value ? cardGroups.day : cardGroups.night)
@@ -34,7 +50,7 @@ function onAnimationEnd() {
     <!-- Intro text: sits above card on mobile, hidden on desktop (shown inside right col) -->
     <div class="result__intro result__intro--mobile" :class="{ 'is-hidden': hasDrawn }">
       <p>Your relationship with your phone isn't a problem to be measured — it's a life to be lived, beautifully.<br><br>
-      Please take as a gift, our first Nidra offering!</p>
+      Please take as a gift, our first Nidra offering:</p>
     </div>
 
     <div class="result__body">
@@ -89,7 +105,7 @@ function onAnimationEnd() {
             <!-- Intro text: desktop only (mobile version sits above card) -->
             <p class="result__intro result__intro--desktop">
               Your relationship with your phone isn't a problem to be measured — it's a life to be lived, beautifully.<br><br>
-              Please take as a gift, our first Nidra offering!
+              Please take as a gift, our first Nidra offering:
             </p>
 
             <button
@@ -127,7 +143,14 @@ function onAnimationEnd() {
       </div>
     </div>
 
-    <NidraSignoff class="result__signoff" />
+    <div class="result__signoff">
+      <div class="result__signoff-text">
+        <span>Follow the treasure</span>
+        <a href="https://www.nidra.space" target="_blank" rel="noopener">www.nidra.space</a>
+        <a href="https://www.instagram.com/nidra.space" target="_blank" rel="noopener">@nidra.space</a>
+      </div>
+      <span class="result__signoff-pratika" v-html="pratikaSvg" />
+    </div>
 
   </div>
 </template>
@@ -395,7 +418,34 @@ function onAnimationEnd() {
 }
 
 .result__signoff {
-  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.result__signoff-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Cloister, Georgia, serif;
+  text-align: center;
+}
+
+.result__signoff-text a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.result__signoff-text a:hover {
+  text-decoration: underline;
+}
+
+.result__signoff-pratika :deep(svg) {
+  display: block;
+  width: 48px;
+  height: auto;
+  fill: currentColor;
 }
 
 /* ── Mobile layout ───────────────────────────────────────────────────────── */

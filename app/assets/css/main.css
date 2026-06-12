@@ -4477,6 +4477,18 @@ a { transition:all ease-in-out 0.5s; }
   text-align: center;
   max-width: 420px;
 }
+.q__footer-text {
+  margin: 0;
+  align-self: center;
+  color: var(--primary);
+  opacity: 0.75;
+  font-family: Cloister, Georgia, serif;
+  font-style: normal;
+  font-size: 22px;
+  text-align: center;
+  max-width: 420px;
+}
+
 .q__answers {
   list-style: none;
   padding: 0;
@@ -4511,9 +4523,7 @@ a { transition:all ease-in-out 0.5s; }
   color: var(--primary);
 }
 
-.q__answers-button--continue {   background: var(--shadow); }
-.q__answers-button--skip { background: transparent; border-color: transparent; opacity: 0.45; transition: opacity 0.3s; }
-.q__answers-button--skip:hover { background: transparent; border-color: transparent; opacity: 1; }
+.q__answers-button--continue { background: var(--shadow); white-space: pre-line; }
 
 .q__text-input {
 padding: 1em;

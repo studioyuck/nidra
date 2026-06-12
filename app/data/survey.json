@@ -78,7 +78,7 @@
       },
       {
         "id": "q7",
-        "question": "Do you start the day with a ritual—however small—before reaching for your phone?",
+        "question": "Do you start the day with a ritual, however small, before reaching for your phone?",
         "input_type": "single_choice",
         "optional": true,
         "options": [
@@ -132,9 +132,11 @@
       },
       {
         "id": "q_contact",
-        "question": "The world of Nidra is coming soon. Will you join us?",
-        "description": "Beautiful objects and offerings for those dreaming of a less distracted life.",
-        "input_type": "contact"
+        "question": "The world of Nidra is coming soon.",
+        "question_sub": "Will you join us?",
+        "input_type": "contact",
+        "button_label": "Continue to receive your Nidra card",
+        "footer_text": "Beautiful objects and offerings for those dreaming of a less distracted life."
       }
     ]
   }
