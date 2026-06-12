@@ -4560,7 +4560,7 @@ a { transition:all ease-in-out 0.5s; }
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  min-height: 100vh;
+  min-height: 100svh;
   width: 100%;
 }
 
