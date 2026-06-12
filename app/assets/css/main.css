@@ -101,21 +101,6 @@
 }
 
 /* ── Home page full-viewport background ─────────────────────────────────── */
-body.page--home .app-shell__content {
-  position: relative;
-}
-
-body.page--home .app-shell__content::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('/images/bg-day.jpg');
-  background-size: cover;
-  background-position: top center;
-  transform: rotate(180deg);
-  z-index: 0;
-  pointer-events: none;
-}
 
 .page-enter-active {
   transition: opacity 0.6s ease;
@@ -4662,15 +4647,6 @@ font-size: var(--font-lg);
   transition: background-color 0.8s ease, color 0.8s ease;
 }
 
-/* Background image layer — sits behind all content */
-.survey__bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-  pointer-events: none;
-}
 
 /* Content sits above the bg layer */
 .survey__content {
@@ -4702,9 +4678,6 @@ font-size: var(--font-lg);
     transform: translateX(-50%);
   }
 
-  .page--survey {
-    min-height: calc(100svh + 160px);
-  }
 }
 
 .survey__nav-btn {

@@ -1,11 +1,6 @@
 <template>
   <div class="page--survey survey__wrapper" :style="themeVars">
 
-    <!-- Background image layer — cross-fades independently of content -->
-    <Transition name="survey-bg">
-      <div :key="bgKey" class="survey__bg" :style="{ backgroundImage: `url('${currentBgImage}')` }" />
-    </Transition>
-
     <!-- Content sits above the bg layer -->
     <div class="survey__content">
     <transition name="fade-slide" mode="out-in">
@@ -184,6 +179,14 @@ function sendBeaconNow() {
 
 const musicEnabled = useState('music', () => false)
 const surveyActive = useState('surveyActive', () => false)
+
+const { setBackground, clearBackground } = usePageBackground()
+
+watch(currentBgImage, (img) => {
+  setBackground(img, bgKey.value)
+}, { immediate: true })
+
+onBeforeUnmount(() => clearBackground())
 
 // compute section and current question
 const currentSection = computed(() => {
